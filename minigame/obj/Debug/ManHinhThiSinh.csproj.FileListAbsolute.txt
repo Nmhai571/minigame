@@ -1,0 +1,14 @@
+D:\C#\minigame\minigame\bin\Debug\minigame.exe.config
+D:\C#\minigame\minigame\bin\Debug\minigame.exe
+D:\C#\minigame\minigame\bin\Debug\minigame.pdb
+D:\C#\minigame\minigame\obj\Debug\ManHinhThiSinh.csproj.AssemblyReference.cache
+D:\C#\minigame\minigame\obj\Debug\ManHinhThiSinh.csproj.SuggestedBindingRedirects.cache
+D:\C#\minigame\minigame\obj\Debug\minigame.Login.resources
+D:\C#\minigame\minigame\obj\Debug\minigame.Member.resources
+D:\C#\minigame\minigame\obj\Debug\minigame.NickName.resources
+D:\C#\minigame\minigame\obj\Debug\minigame.Pin.resources
+D:\C#\minigame\minigame\obj\Debug\minigame.Properties.Resources.resources
+D:\C#\minigame\minigame\obj\Debug\ManHinhThiSinh.csproj.GenerateResource.cache
+D:\C#\minigame\minigame\obj\Debug\ManHinhThiSinh.csproj.CoreCompileInputs.cache
+D:\C#\minigame\minigame\obj\Debug\minigame.exe
+D:\C#\minigame\minigame\obj\Debug\minigame.pdb
