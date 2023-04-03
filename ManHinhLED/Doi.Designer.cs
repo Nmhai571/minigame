@@ -49,7 +49,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(77, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(79, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 166);
             this.pictureBox1.TabIndex = 0;
@@ -85,7 +85,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(614, 380);
+            this.pictureBox5.Location = new System.Drawing.Point(607, 380);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(200, 166);
             this.pictureBox5.TabIndex = 4;
