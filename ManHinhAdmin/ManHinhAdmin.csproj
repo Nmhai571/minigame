@@ -46,26 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="QuanLyCauHoi.cs">
+    <Compile Include="ADM.01_QuanLyCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyCauHoi.Designer.cs">
-      <DependentUpon>QuanLyCauHoi.cs</DependentUpon>
+    <Compile Include="ADM.01_QuanLyCauHoi.Designer.cs">
+      <DependentUpon>ADM.01_QuanLyCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyDoi.cs">
+    <Compile Include="ADM.02_ThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyDoi.Designer.cs">
-      <DependentUpon>QuanLyDoi.cs</DependentUpon>
+    <Compile Include="ADM.02_ThemCauHoi.Designer.cs">
+      <DependentUpon>ADM.02_ThemCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyTroChoi.cs">
+    <Compile Include="ADM.03_XepDoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyTroChoi.Designer.cs">
-      <DependentUpon>QuanLyTroChoi.cs</DependentUpon>
+    <Compile Include="ADM.03_XepDoi.Designer.cs">
+      <DependentUpon>ADM.03_XepDoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADM.04_VanHanhThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADM.04_VanHanhThi.Designer.cs">
+      <DependentUpon>ADM.04_VanHanhThi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ADM.01_QuanLyCauHoi.resx">
+      <DependentUpon>ADM.01_QuanLyCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADM.02_ThemCauHoi.resx">
+      <DependentUpon>ADM.02_ThemCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADM.03_XepDoi.resx">
+      <DependentUpon>ADM.03_XepDoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADM.04_VanHanhThi.resx">
+      <DependentUpon>ADM.04_VanHanhThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,15 +93,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyCauHoi.resx">
-      <DependentUpon>QuanLyCauHoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyDoi.resx">
-      <DependentUpon>QuanLyDoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyTroChoi.resx">
-      <DependentUpon>QuanLyTroChoi.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ManHinhAdmin
 {
-    public partial class Form1 : Form
+    public partial class ADM3 : Form
     {
-        public Form1()
+        public ADM3()
         {
             InitializeComponent();
+        }
+
+        private void ADM_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

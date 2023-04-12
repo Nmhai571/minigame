@@ -97,6 +97,7 @@
             this.Column1.HeaderText = "Thí Sinh";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 

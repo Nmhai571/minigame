@@ -4,10 +4,11 @@ D:\C#\minigame\ManHinhAdmin\bin\Debug\ManHinhAdmin.pdb
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.csproj.AssemblyReference.cache
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.csproj.SuggestedBindingRedirects.cache
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.Properties.Resources.resources
-D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.Form1.resources
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.csproj.GenerateResource.cache
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.csproj.CoreCompileInputs.cache
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.exe
 D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.pdb
-D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.QuanLyCauHoi.resources
-D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.QuanLyDoi.resources
+D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.ADM1.resources
+D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.ADM2.resources
+D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.ADM3.resources
+D:\C#\minigame\ManHinhAdmin\obj\Debug\ManHinhAdmin.ADM4.resources
