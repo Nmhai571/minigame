@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ManHinhLED
 {
-    public partial class KetQua : Form
+    public partial class LED4 : Form
     {
-        public KetQua()
+        public LED4()
         {
             InitializeComponent();
+        }
+
+        private void LED4_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

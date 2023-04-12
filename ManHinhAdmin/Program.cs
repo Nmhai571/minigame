@@ -16,7 +16,7 @@ namespace ManHinhAdmin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyDoi());
+            Application.Run(new Form1());
         }
     }
 }

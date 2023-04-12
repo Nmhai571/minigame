@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace minigame
+namespace ManHinhLED
 {
-    public partial class Login : Form
+    public partial class LED2 : Form
     {
-        public Login()
+        public LED2()
         {
             InitializeComponent();
         }
@@ -22,22 +22,14 @@ namespace minigame
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void LED2_Load(object sender, EventArgs e)
         {
-
+            this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

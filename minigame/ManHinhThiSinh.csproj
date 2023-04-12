@@ -47,48 +47,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Member.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Member.Designer.cs">
       <DependentUpon>Member.cs</DependentUpon>
     </Compile>
-    <Compile Include="NickName.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NickName.Designer.cs">
-      <DependentUpon>NickName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pin.Designer.cs">
-      <DependentUpon>Pin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="TS.01_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TS.01_DangNhap.Designer.cs">
+      <DependentUpon>TS.01_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TS.02_ThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TS.02_ThongTin.Designer.cs">
+      <DependentUpon>TS.02_ThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TS.03_MHThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TS.03_MHThi.Designer.cs">
+      <DependentUpon>TS.03_MHThi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Member.resx">
       <DependentUpon>Member.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NickName.resx">
-      <DependentUpon>NickName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pin.resx">
-      <DependentUpon>Pin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TS.01_DangNhap.resx">
+      <DependentUpon>TS.01_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TS.02_ThongTin.resx">
+      <DependentUpon>TS.02_ThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TS.03_MHThi.resx">
+      <DependentUpon>TS.03_MHThi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
