@@ -18,7 +18,7 @@ namespace minigame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TS3());
+            Application.Run(new TS4());
 
             
     }

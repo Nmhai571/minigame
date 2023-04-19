@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Có sẵn danh sách 5 bộ đề, mỗi bộ đề 10 câu.
+Mỗi lần lên thi 1 nhóm 5 thí sinh thuộc 5 đội 
+thi trên 5 máy tính.
+Bắt đầu thi MC sẽ bốc ngẫu nhiên 1 số thứ tự bộ đề và dùng cả bộ đề 10 câu đó.
+Mỗi câu hỏi sẽ có thời gian 10s để trả lời
+Khi 5 đội làm bài xong sẽ tính điểm, nếu có cùng số điểm sẽ tính theo
+thời gian làm bài
+
+</value>
+  </data>
 </root>

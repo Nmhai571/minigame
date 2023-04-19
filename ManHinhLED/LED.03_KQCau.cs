@@ -17,10 +17,10 @@ namespace ManHinhLED
             InitializeComponent();
         }
 
-        private void LED_Load(object sender, EventArgs e)
+        private void LED3_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
+            // this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -30,6 +30,21 @@ namespace ManHinhLED
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbCau_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

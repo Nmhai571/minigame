@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +106,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NenTheLe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheLe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HinhTronDoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doi3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doi4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doi5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doi6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileHinhDe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileHinhDe1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HinhVien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HinhVien1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viền.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

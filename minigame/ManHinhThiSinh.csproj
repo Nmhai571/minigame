@@ -67,6 +67,12 @@
     <Compile Include="TS.03_MHThi.Designer.cs">
       <DependentUpon>TS.03_MHThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="TS.04_MHThiMatching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TS.04_MHThiMatching.Designer.cs">
+      <DependentUpon>TS.04_MHThiMatching.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TS.03_MHThi.resx">
       <DependentUpon>TS.03_MHThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TS.04_MHThiMatching.resx">
+      <DependentUpon>TS.04_MHThiMatching.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -104,6 +113,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\Microsoft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DangNhap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HoaMauVang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThongTinTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manhinhthi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileHinhDe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manhinhthi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MHThiMatching.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
