@@ -16,7 +16,7 @@ namespace ManHinhAdmin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ADM4());
+            Application.Run(new ADM1());
         }
     }
 }

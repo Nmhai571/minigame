@@ -29,117 +29,138 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cbQuestionType = new System.Windows.Forms.ComboBox();
+            this.btnChooseImage = new System.Windows.Forms.Button();
+            this.pbQuestion = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.tbAddAnswer = new System.Windows.Forms.TextBox();
+            this.tbAddQuestionName = new System.Windows.Forms.TextBox();
+            this.cbAddTopic = new System.Windows.Forms.ComboBox();
+            this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQuestion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbQuestionType);
+            this.panel1.Controls.Add(this.btnChooseImage);
+            this.panel1.Controls.Add(this.pbQuestion);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.tbAddAnswer);
+            this.panel1.Controls.Add(this.tbAddQuestionName);
+            this.panel1.Controls.Add(this.cbAddTopic);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(634, 616);
+            this.panel1.Size = new System.Drawing.Size(620, 636);
             this.panel1.TabIndex = 0;
             // 
-            // comboBox1
+            // cbQuestionType
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbQuestionType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(60, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(476, 24);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Bộ Đề";
+            this.cbQuestionType.FormattingEnabled = true;
+            this.cbQuestionType.Location = new System.Drawing.Point(340, 12);
+            this.cbQuestionType.Name = "cbQuestionType";
+            this.cbQuestionType.Size = new System.Drawing.Size(196, 24);
+            this.cbQuestionType.TabIndex = 9;
+            this.cbQuestionType.Text = "Loại Câu Hỏi";
             // 
-            // textBox1
+            // btnChooseImage
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnChooseImage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnChooseImage.Location = new System.Drawing.Point(60, 356);
+            this.btnChooseImage.Name = "btnChooseImage";
+            this.btnChooseImage.Size = new System.Drawing.Size(141, 44);
+            this.btnChooseImage.TabIndex = 8;
+            this.btnChooseImage.Text = "Chọn Ảnh";
+            this.btnChooseImage.UseVisualStyleBackColor = true;
+            this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            // 
+            // pbQuestion
+            // 
+            this.pbQuestion.Location = new System.Drawing.Point(60, 89);
+            this.pbQuestion.Name = "pbQuestion";
+            this.pbQuestion.Size = new System.Drawing.Size(476, 261);
+            this.pbQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbQuestion.TabIndex = 7;
+            this.pbQuestion.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnBack.Location = new System.Drawing.Point(297, 463);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(225, 51);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Trở Về";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAdd.Location = new System.Drawing.Point(60, 463);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(231, 51);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // tbAddAnswer
+            // 
+            this.tbAddAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(60, 100);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(476, 102);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Tên Câu Hỏi";
+            this.tbAddAnswer.Location = new System.Drawing.Point(60, 406);
+            this.tbAddAnswer.Multiline = true;
+            this.tbAddAnswer.Name = "tbAddAnswer";
+            this.tbAddAnswer.Size = new System.Drawing.Size(462, 31);
+            this.tbAddAnswer.TabIndex = 3;
+            this.tbAddAnswer.Text = "Đáp Án";
             // 
-            // textBox2
+            // tbAddQuestionName
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbAddQuestionName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(60, 245);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(476, 102);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Câu Hỏi";
+            this.tbAddQuestionName.Location = new System.Drawing.Point(60, 52);
+            this.tbAddQuestionName.Name = "tbAddQuestionName";
+            this.tbAddQuestionName.Size = new System.Drawing.Size(462, 22);
+            this.tbAddQuestionName.TabIndex = 1;
+            this.tbAddQuestionName.Text = "Tên Câu Hỏi";
             // 
-            // textBox3
+            // cbAddTopic
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbAddTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(60, 396);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(476, 102);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "Đáp Án";
+            this.cbAddTopic.FormattingEnabled = true;
+            this.cbAddTopic.Location = new System.Drawing.Point(60, 12);
+            this.cbAddTopic.Name = "cbAddTopic";
+            this.cbAddTopic.Size = new System.Drawing.Size(196, 24);
+            this.cbAddTopic.TabIndex = 0;
+            this.cbAddTopic.Text = "Bộ Đề";
             // 
-            // button1
+            // ofdOpenFile
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(60, 528);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 51);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Location = new System.Drawing.Point(228, 528);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 51);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Location = new System.Drawing.Point(395, 528);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 51);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Trở Về";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ofdOpenFile.FileName = "openFileDialog1";
             // 
             // ADM2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 616);
+            this.ClientSize = new System.Drawing.Size(620, 636);
             this.Controls.Add(this.panel1);
             this.Name = "ADM2";
             this.Text = "ADM.02_ThemCauHoi";
             this.Load += new System.EventHandler(this.ADM2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQuestion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,12 +168,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox tbAddAnswer;
+        private System.Windows.Forms.TextBox tbAddQuestionName;
+        private System.Windows.Forms.ComboBox cbAddTopic;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.PictureBox pbQuestion;
+        private System.Windows.Forms.Button btnChooseImage;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.OpenFileDialog ofdOpenFile;
+        private System.Windows.Forms.ComboBox cbQuestionType;
     }
 }

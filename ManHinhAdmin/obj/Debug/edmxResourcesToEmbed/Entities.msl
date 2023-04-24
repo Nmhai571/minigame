@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="gameshowhannguEntities">
+    <EntitySetMapping Name="answers_of_student">
+      <EntityTypeMapping TypeName="Model.answers_of_student">
+        <MappingFragment StoreEntitySet="answers_of_student">
+          <ScalarProperty Name="id_student" ColumnName="id_student" />
+          <ScalarProperty Name="id_question" ColumnName="id_question" />
+          <ScalarProperty Name="time_of_answer" ColumnName="time_of_answer" />
+          <ScalarProperty Name="answers" ColumnName="answers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="question_topic">
+      <EntityTypeMapping TypeName="Model.question_topic">
+        <MappingFragment StoreEntitySet="question_topic">
+          <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+          <ScalarProperty Name="name_topic" ColumnName="name_topic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="question_type">
+      <EntityTypeMapping TypeName="Model.question_type">
+        <MappingFragment StoreEntitySet="question_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type_of_name" ColumnName="type_of_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="Model.question">
+        <MappingFragment StoreEntitySet="questions">
+          <ScalarProperty Name="id_question" ColumnName="id_question" />
+          <ScalarProperty Name="true_answer" ColumnName="true_answer" />
+          <ScalarProperty Name="point" ColumnName="point" />
+          <ScalarProperty Name="name_question" ColumnName="name_question" />
+          <ScalarProperty Name="img_question" ColumnName="img_question" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+          <ScalarProperty Name="id_question_type" ColumnName="id_question_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status_led">
+      <EntityTypeMapping TypeName="Model.status_led">
+        <MappingFragment StoreEntitySet="status_led">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="count_status" ColumnName="count_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="statusses">
+      <EntityTypeMapping TypeName="Model.statuss">
+        <MappingFragment StoreEntitySet="statuss">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="name_status" ColumnName="name_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="Model.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="id_student" ColumnName="id_student" />
+          <ScalarProperty Name="name_account" ColumnName="name_account" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="point" ColumnName="point" />
+          <ScalarProperty Name="id_team" ColumnName="id_team" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="team_battle">
+      <EntityTypeMapping TypeName="Model.team_battle">
+        <MappingFragment StoreEntitySet="team_battle">
+          <ScalarProperty Name="id_team" ColumnName="id_team" />
+          <ScalarProperty Name="name_team" ColumnName="name_team" />
+          <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
