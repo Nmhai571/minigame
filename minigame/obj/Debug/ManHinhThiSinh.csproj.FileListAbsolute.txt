@@ -12,3 +12,8 @@ D:\C#\minigame\minigame\obj\Debug\ManHinhThiSinh.csproj.CoreCompileInputs.cache
 D:\C#\minigame\minigame\obj\Debug\minigame.exe
 D:\C#\minigame\minigame\obj\Debug\minigame.pdb
 D:\C#\minigame\minigame\obj\Debug\minigame.TS4.resources
+D:\C#\minigame\minigame\bin\Debug\EntityFramework.dll
+D:\C#\minigame\minigame\bin\Debug\EntityFramework.SqlServer.dll
+D:\C#\minigame\minigame\bin\Debug\EntityFramework.xml
+D:\C#\minigame\minigame\bin\Debug\EntityFramework.SqlServer.xml
+D:\C#\minigame\minigame\obj\Debug\ManHinhThiSinh.csproj.CopyComplete

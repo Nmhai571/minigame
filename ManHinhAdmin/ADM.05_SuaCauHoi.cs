@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ManHinhAdmin
@@ -74,6 +69,9 @@ namespace ManHinhAdmin
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Update();
+            ADM1 admin1 = new ADM1();
+            admin1.Show();
+            this.Hide();
         }
 
         private void btnChooseImage_Click(object sender, EventArgs e)
@@ -86,6 +84,13 @@ namespace ManHinhAdmin
             }
             Image questionImage = Image.FromFile(filePath);
             pbQuestion.Image = questionImage;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ADM1 admin1 = new ADM1();
+            admin1.Show();
+            this.Hide();
         }
     }
 }

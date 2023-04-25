@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gameshowhannguModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="answers_of_student">
+    <Key>
+      <PropertyRef Name="id_student" />
+      <PropertyRef Name="id_question" />
+    </Key>
+    <Property Name="id_student" Type="int" Nullable="false" />
+    <Property Name="id_question" Type="int" Nullable="false" />
+    <Property Name="time_of_answer" Type="int" />
+    <Property Name="answers" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="question_topic">
+    <Key>
+      <PropertyRef Name="id_topic" />
+    </Key>
+    <Property Name="id_topic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_topic" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="question_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type_of_name" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="questions">
+    <Key>
+      <PropertyRef Name="id_question" />
+    </Key>
+    <Property Name="id_question" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="true_answer" Type="nvarchar" MaxLength="10" />
+    <Property Name="point" Type="int" />
+    <Property Name="name_question" Type="nvarchar" MaxLength="10" />
+    <Property Name="img_question" Type="image" />
+    <Property Name="id_status" Type="int" />
+    <Property Name="id_topic" Type="int" />
+    <Property Name="id_question_type" Type="int" />
+  </EntityType>
+  <EntityType Name="status_led">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="count_status" Type="int" />
+  </EntityType>
+  <EntityType Name="statuss">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_status" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id_student" />
+    </Key>
+    <Property Name="id_student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_account" Type="nvarchar" MaxLength="100" />
+    <Property Name="pass" Type="varchar" MaxLength="100" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="100" />
+    <Property Name="point" Type="int" />
+    <Property Name="id_team" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="team_battle">
+    <Key>
+      <PropertyRef Name="id_team" />
+    </Key>
+    <Property Name="id_team" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_team" Type="nvarchar" MaxLength="30" />
+    <Property Name="id_topic" Type="int" />
+  </EntityType>
+  <Association Name="FK__answers_o__id_qu__5CD6CB2B">
+    <End Role="questions" Type="Self.questions" Multiplicity="1" />
+    <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="questions">
+        <PropertyRef Name="id_question" />
+      </Principal>
+      <Dependent Role="answers_of_student">
+        <PropertyRef Name="id_question" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__answers_o__id_st__5BE2A6F2">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="id_student" />
+      </Principal>
+      <Dependent Role="answers_of_student">
+        <PropertyRef Name="id_student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__questions__id_qu__534D60F1">
+    <End Role="question_type" Type="Self.question_type" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="id_question_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__questions__id_st__52593CB8">
+    <End Role="statuss" Type="Self.statuss" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="statuss">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__questions__id_to__5165187F">
+    <End Role="question_topic" Type="Self.question_topic" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question_topic">
+        <PropertyRef Name="id_topic" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="id_topic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student__id_team__59063A47">
+    <End Role="team_battle" Type="Self.team_battle" Multiplicity="0..1" />
+    <End Role="student" Type="Self.student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team_battle">
+        <PropertyRef Name="id_team" />
+      </Principal>
+      <Dependent Role="student">
+        <PropertyRef Name="id_team" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__team_batt__id_to__5629CD9C">
+    <End Role="question_topic" Type="Self.question_topic" Multiplicity="0..1" />
+    <End Role="team_battle" Type="Self.team_battle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question_topic">
+        <PropertyRef Name="id_topic" />
+      </Principal>
+      <Dependent Role="team_battle">
+        <PropertyRef Name="id_topic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gameshowhannguModelStoreContainer">
+    <EntitySet Name="answers_of_student" EntityType="Self.answers_of_student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="question_topic" EntityType="Self.question_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="status_led" EntityType="Self.status_led" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="statuss" EntityType="Self.statuss" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="team_battle" EntityType="Self.team_battle" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__answers_o__id_qu__5CD6CB2B" Association="Self.FK__answers_o__id_qu__5CD6CB2B">
+      <End Role="questions" EntitySet="questions" />
+      <End Role="answers_of_student" EntitySet="answers_of_student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__answers_o__id_st__5BE2A6F2" Association="Self.FK__answers_o__id_st__5BE2A6F2">
+      <End Role="student" EntitySet="student" />
+      <End Role="answers_of_student" EntitySet="answers_of_student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__questions__id_qu__534D60F1" Association="Self.FK__questions__id_qu__534D60F1">
+      <End Role="question_type" EntitySet="question_type" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__questions__id_st__52593CB8" Association="Self.FK__questions__id_st__52593CB8">
+      <End Role="statuss" EntitySet="statuss" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__questions__id_to__5165187F" Association="Self.FK__questions__id_to__5165187F">
+      <End Role="question_topic" EntitySet="question_topic" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student__id_team__59063A47" Association="Self.FK__student__id_team__59063A47">
+      <End Role="team_battle" EntitySet="team_battle" />
+      <End Role="student" EntitySet="student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__team_batt__id_to__5629CD9C" Association="Self.FK__team_batt__id_to__5629CD9C">
+      <End Role="question_topic" EntitySet="question_topic" />
+      <End Role="team_battle" EntitySet="team_battle" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

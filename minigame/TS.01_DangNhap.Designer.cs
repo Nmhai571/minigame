@@ -35,10 +35,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbAccount = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -116,7 +116,7 @@
             this.pictureBox1.Image = global::minigame.Properties.Resources.HoaMauVang;
             this.pictureBox1.Location = new System.Drawing.Point(3, 106);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 179);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 178);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -143,29 +143,29 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.56F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.44F));
-            this.tableLayoutPanel5.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tbPassword, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tbAccount, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 39);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(625, 303);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(625, 302);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // textBox2
+            // tbPassword
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(169, 216);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(453, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "***********";
+            this.tbPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbPassword.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPassword.Location = new System.Drawing.Point(169, 215);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(453, 22);
+            this.tbPassword.TabIndex = 3;
+            this.tbPassword.Text = "***********";
             // 
             // label2
             // 
@@ -188,32 +188,33 @@
             this.label3.ForeColor = System.Drawing.Color.Firebrick;
             this.label3.Location = new System.Drawing.Point(3, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 152);
+            this.label3.Size = new System.Drawing.Size(160, 151);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mật Khẩu:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // tbAccount
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(169, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(453, 22);
-            this.textBox1.TabIndex = 2;
+            this.tbAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbAccount.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tbAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbAccount.Location = new System.Drawing.Point(169, 64);
+            this.tbAccount.Name = "tbAccount";
+            this.tbAccount.Size = new System.Drawing.Size(453, 22);
+            this.tbAccount.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Khaki;
             this.button1.Font = new System.Drawing.Font("Trajan Pro 3", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(3, 348);
+            this.button1.Location = new System.Drawing.Point(3, 347);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 65);
             this.button1.TabIndex = 1;
             this.button1.Text = "Đăng Nhập";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TS1
             // 
@@ -250,8 +251,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbAccount;
+        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button button1;
     }
 }

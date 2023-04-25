@@ -64,7 +64,6 @@ namespace ManHinhAdmin
                 context.questions.Remove(deleteQuesion);
                 context.SaveChanges();
                 LoadData();
-
             }
         }
         #endregion

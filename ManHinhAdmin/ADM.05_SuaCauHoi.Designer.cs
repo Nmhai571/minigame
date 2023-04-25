@@ -85,6 +85,7 @@
             this.btnBack.TabIndex = 14;
             this.btnBack.Text = "Trở Về";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnEdit
             // 
