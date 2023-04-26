@@ -12,6 +12,7 @@ namespace minigame
 {
     public partial class TS3 : Form
     {
+        gameshowhannguEntities context = new gameshowhannguEntities();
         public TS3()
         {
             InitializeComponent();
@@ -19,9 +20,11 @@ namespace minigame
 
         private void TS_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
+            //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
         }
+
+    
     }
 }

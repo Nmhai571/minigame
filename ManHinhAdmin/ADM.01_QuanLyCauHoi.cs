@@ -69,7 +69,7 @@ namespace ManHinhAdmin
         #endregion
         private void btnXemCauHoi_Click(object sender, EventArgs e)
         {
-            LoadData();
+            this.Refresh();
         }
 
         private void btnAddQ_Click(object sender, EventArgs e)
@@ -124,6 +124,13 @@ namespace ManHinhAdmin
                 }
             }
             admin5.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ADM3 admin3 = new ADM3();
+            admin3.Show();
             this.Hide();
         }
     }

@@ -72,13 +72,13 @@ namespace ManHinhAdmin
 
             question question = new question()
             {
-                name_question = tbAddQuestionName.Text,
-                point = 1,
+                name_question = tbAddQuestionName.Text, // message
+                point = 1, 
                 id_status = 1,
                 id_topic = resultTopic.id_topic,
-                true_answer = tbAddAnswer.Text,
+                true_answer = tbAddAnswer.Text,// message
                 id_question_type = resultTypeQuestion.id,
-                img_question = stream.ToArray(),
+                img_question = stream.ToArray(), // message
             };
 
             context.questions.Add(question);

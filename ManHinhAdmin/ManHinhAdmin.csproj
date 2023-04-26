@@ -73,17 +73,17 @@
     <Compile Include="ADM.03_XepDoi.Designer.cs">
       <DependentUpon>ADM.03_XepDoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADM.04_VanHanhThi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ADM.04_VanHanhThi.Designer.cs">
-      <DependentUpon>ADM.04_VanHanhThi.cs</DependentUpon>
-    </Compile>
     <Compile Include="ADM.05_SuaCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ADM.05_SuaCauHoi.Designer.cs">
       <DependentUpon>ADM.05_SuaCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADM.04_VanHanhThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADM.04_VanHanhThi.Designer.cs">
+      <DependentUpon>ADM.04_VanHanhThi.cs</DependentUpon>
     </Compile>
     <Compile Include="answers_of_student.cs">
       <DependentUpon>Entities.tt</DependentUpon>
@@ -135,11 +135,11 @@
     <EmbeddedResource Include="ADM.03_XepDoi.resx">
       <DependentUpon>ADM.03_XepDoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ADM.04_VanHanhThi.resx">
-      <DependentUpon>ADM.04_VanHanhThi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ADM.05_SuaCauHoi.resx">
       <DependentUpon>ADM.05_SuaCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADM.04_VanHanhThi.resx">
+      <DependentUpon>ADM.04_VanHanhThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -251,8 +251,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbAccount;
-        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox tbAccount;
+        public System.Windows.Forms.TextBox tbPassword;
     }
 }

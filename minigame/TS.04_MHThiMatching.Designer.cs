@@ -31,10 +31,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbNameThi = new System.Windows.Forms.Label();
+            this.lbTeamThi = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAnhThi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnhThi)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,8 +91,8 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lbNameThi, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lbTeamThi, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(56, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -103,36 +103,36 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(454, 162);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // label1
+            // lbNameThi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(448, 64);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nguyễn Minh Hải";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNameThi.AutoSize = true;
+            this.lbNameThi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbNameThi.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameThi.Location = new System.Drawing.Point(3, 38);
+            this.lbNameThi.Name = "lbNameThi";
+            this.lbNameThi.Size = new System.Drawing.Size(448, 64);
+            this.lbNameThi.TabIndex = 0;
+            this.lbNameThi.Text = "Nguyễn Minh Hải";
+            this.lbNameThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbTeamThi
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(448, 60);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Đội 1";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTeamThi.AutoSize = true;
+            this.lbTeamThi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTeamThi.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeamThi.Location = new System.Drawing.Point(3, 102);
+            this.lbTeamThi.Name = "lbTeamThi";
+            this.lbTeamThi.Size = new System.Drawing.Size(448, 60);
+            this.lbTeamThi.TabIndex = 1;
+            this.lbTeamThi.Text = "Đội 1";
+            this.lbTeamThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.63012F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.36988F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.pbAnhThi, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 177);
@@ -143,16 +143,16 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1007, 449);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // pictureBox1
+            // pbAnhThi
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::minigame.Properties.Resources.FileHinhDe;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(775, 443);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbAnhThi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbAnhThi.Image = global::minigame.Properties.Resources.FileHinhDe;
+            this.pbAnhThi.Location = new System.Drawing.Point(3, 3);
+            this.pbAnhThi.Name = "pbAnhThi";
+            this.pbAnhThi.Size = new System.Drawing.Size(775, 443);
+            this.pbAnhThi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAnhThi.TabIndex = 0;
+            this.pbAnhThi.TabStop = false;
             // 
             // tableLayoutPanel5
             // 
@@ -294,7 +294,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnhThi)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
@@ -306,10 +306,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -319,5 +316,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.Label lbNameThi;
+        public System.Windows.Forms.Label lbTeamThi;
+        public System.Windows.Forms.PictureBox pbAnhThi;
     }
 }
