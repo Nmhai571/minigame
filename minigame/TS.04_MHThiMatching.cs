@@ -23,5 +23,11 @@ namespace minigame
             //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
+
+
+        private void timerCount_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

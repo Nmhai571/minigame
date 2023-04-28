@@ -1,4 +1,5 @@
-﻿create database gameshowhanngu;
+﻿
+create database gameshowhanngu;
 use gameshowhanngu;
 -- bảng bộ đề
 create table question_topic(
@@ -120,11 +121,12 @@ insert into student(name_account, pass, fullname, point, id_team) values ('e123'
 select * from student
 -- bảng đáp án của sinh viên
 create table answers_of_student(
+	id_answer_of_student int IDENTITY(1,1),
 	id_student int,
 	id_question int,
 	time_of_answer int,
 	answers nvarchar(30),
-	primary key(id_student, id_question),
+	primary key(id_answer_of_student),
 	FOREIGN KEY (id_student) REFERENCES student(id_student),
 	FOREIGN KEY (id_question) REFERENCES questions(id_question)
 );
@@ -135,6 +137,8 @@ insert into answers_of_student(id_student, id_question, time_of_answer, answers)
 insert into answers_of_student(id_student, id_question, time_of_answer, answers) values (4, 1, 0, 'A')
 insert into answers_of_student(id_student, id_question, time_of_answer, answers) values (5, 1, 0, 'A')
 insert into answers_of_student(id_student, id_question, time_of_answer, answers) values (6, 1, 0, 'A')
+insert into answers_of_student(id_student, id_question, time_of_answer, answers) values (6, 1, 0, 'A')
+
 
 select* from answers_of_student
 

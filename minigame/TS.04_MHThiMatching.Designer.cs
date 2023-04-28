@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbNameThi = new System.Windows.Forms.Label();
             this.lbTeamThi = new System.Windows.Forms.Label();
+            this.tbTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pbAnhThi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,6 +46,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.timerCount = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -66,7 +69,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.76801F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.23199F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 629);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 668);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -78,12 +81,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.92359F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.84939F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbTime, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1007, 168);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1007, 179);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -100,7 +104,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.9726F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.72603F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.30137F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(454, 162);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(454, 173);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lbNameThi
@@ -108,9 +112,9 @@
             this.lbNameThi.AutoSize = true;
             this.lbNameThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbNameThi.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameThi.Location = new System.Drawing.Point(3, 38);
+            this.lbNameThi.Location = new System.Drawing.Point(3, 41);
             this.lbNameThi.Name = "lbNameThi";
-            this.lbNameThi.Size = new System.Drawing.Size(448, 64);
+            this.lbNameThi.Size = new System.Drawing.Size(448, 68);
             this.lbNameThi.TabIndex = 0;
             this.lbNameThi.Text = "Nguyễn Minh Hải";
             this.lbNameThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,12 +124,24 @@
             this.lbTeamThi.AutoSize = true;
             this.lbTeamThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTeamThi.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamThi.Location = new System.Drawing.Point(3, 102);
+            this.lbTeamThi.Location = new System.Drawing.Point(3, 109);
             this.lbTeamThi.Name = "lbTeamThi";
-            this.lbTeamThi.Size = new System.Drawing.Size(448, 60);
+            this.lbTeamThi.Size = new System.Drawing.Size(448, 64);
             this.lbTeamThi.TabIndex = 1;
             this.lbTeamThi.Text = "Đội 1";
             this.lbTeamThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbTime
+            // 
+            this.tbTime.AutoSize = true;
+            this.tbTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTime.Font = new System.Drawing.Font("Times New Roman", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTime.Location = new System.Drawing.Point(658, 0);
+            this.tbTime.Name = "tbTime";
+            this.tbTime.Size = new System.Drawing.Size(224, 179);
+            this.tbTime.TabIndex = 1;
+            this.tbTime.Text = "00";
+            this.tbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -135,12 +151,12 @@
             this.tableLayoutPanel4.Controls.Add(this.pbAnhThi, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 177);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 188);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1007, 449);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 477F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1007, 477);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // pbAnhThi
@@ -149,7 +165,7 @@
             this.pbAnhThi.Image = global::minigame.Properties.Resources.FileHinhDe;
             this.pbAnhThi.Location = new System.Drawing.Point(3, 3);
             this.pbAnhThi.Name = "pbAnhThi";
-            this.pbAnhThi.Size = new System.Drawing.Size(775, 443);
+            this.pbAnhThi.Size = new System.Drawing.Size(775, 471);
             this.pbAnhThi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAnhThi.TabIndex = 0;
             this.pbAnhThi.TabStop = false;
@@ -181,7 +197,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.518797F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.03258F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03509F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(220, 443);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(220, 471);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label3
@@ -189,9 +205,9 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 35);
+            this.label3.Location = new System.Drawing.Point(16, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 58);
+            this.label3.Size = new System.Drawing.Size(105, 62);
             this.label3.TabIndex = 0;
             this.label3.Text = "A";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,9 +217,9 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 130);
+            this.label4.Location = new System.Drawing.Point(16, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 61);
+            this.label4.Size = new System.Drawing.Size(105, 65);
             this.label4.TabIndex = 1;
             this.label4.Text = "B";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,9 +229,9 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 226);
+            this.label5.Location = new System.Drawing.Point(16, 240);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 61);
+            this.label5.Size = new System.Drawing.Size(105, 65);
             this.label5.TabIndex = 2;
             this.label5.Text = "C";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +241,9 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Trajan Pro 3", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 320);
+            this.label6.Location = new System.Drawing.Point(16, 340);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 58);
+            this.label6.Size = new System.Drawing.Size(105, 61);
             this.label6.TabIndex = 3;
             this.label6.Text = "D";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,9 +258,9 @@
             "2",
             "3",
             "4"});
-            this.comboBox1.Location = new System.Drawing.Point(127, 52);
+            this.comboBox1.Location = new System.Drawing.Point(127, 56);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(90, 24);
+            this.comboBox1.Size = new System.Drawing.Size(90, 25);
             this.comboBox1.TabIndex = 4;
             // 
             // comboBox2
@@ -252,9 +268,9 @@
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox2.BackColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(127, 148);
+            this.comboBox2.Location = new System.Drawing.Point(127, 158);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(90, 24);
+            this.comboBox2.Size = new System.Drawing.Size(90, 25);
             this.comboBox2.TabIndex = 5;
             // 
             // comboBox3
@@ -262,9 +278,9 @@
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox3.BackColor = System.Drawing.Color.White;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(127, 244);
+            this.comboBox3.Location = new System.Drawing.Point(127, 260);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(90, 24);
+            this.comboBox3.Size = new System.Drawing.Size(90, 25);
             this.comboBox3.TabIndex = 6;
             // 
             // comboBox4
@@ -272,25 +288,32 @@
             this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox4.BackColor = System.Drawing.Color.White;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(127, 337);
+            this.comboBox4.Location = new System.Drawing.Point(127, 358);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(90, 24);
+            this.comboBox4.Size = new System.Drawing.Size(90, 25);
             this.comboBox4.TabIndex = 7;
+            // 
+            // timerCount
+            // 
+            this.timerCount.Interval = 1000;
+            this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
             // 
             // TS4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::minigame.Properties.Resources.MHThiMatching;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1013, 629);
+            this.ClientSize = new System.Drawing.Size(1013, 668);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Symbol", 8.25F);
             this.Name = "TS4";
             this.Text = "TS";
             this.Load += new System.EventHandler(this.TS4_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -319,5 +342,7 @@
         public System.Windows.Forms.Label lbNameThi;
         public System.Windows.Forms.Label lbTeamThi;
         public System.Windows.Forms.PictureBox pbAnhThi;
+        private System.Windows.Forms.Label tbTime;
+        private System.Windows.Forms.Timer timerCount;
     }
 }

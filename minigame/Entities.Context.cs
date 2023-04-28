@@ -32,7 +32,6 @@ namespace minigame
         public virtual DbSet<status_led> status_led { get; set; }
         public virtual DbSet<statuss> statusses { get; set; }
         public virtual DbSet<student> students { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<team_battle> team_battle { get; set; }
     }
 }

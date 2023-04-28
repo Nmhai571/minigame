@@ -67,11 +67,11 @@
     <Compile Include="ADM.02_ThemCauHoi.Designer.cs">
       <DependentUpon>ADM.02_ThemCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADM.03_XepDoi.cs">
+    <Compile Include="ADM.03_ChonDoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ADM.03_XepDoi.Designer.cs">
-      <DependentUpon>ADM.03_XepDoi.cs</DependentUpon>
+    <Compile Include="ADM.03_ChonDoi.Designer.cs">
+      <DependentUpon>ADM.03_ChonDoi.cs</DependentUpon>
     </Compile>
     <Compile Include="ADM.05_SuaCauHoi.cs">
       <SubType>Form</SubType>
@@ -132,8 +132,8 @@
     <EmbeddedResource Include="ADM.02_ThemCauHoi.resx">
       <DependentUpon>ADM.02_ThemCauHoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ADM.03_XepDoi.resx">
-      <DependentUpon>ADM.03_XepDoi.cs</DependentUpon>
+    <EmbeddedResource Include="ADM.03_ChonDoi.resx">
+      <DependentUpon>ADM.03_ChonDoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ADM.05_SuaCauHoi.resx">
       <DependentUpon>ADM.05_SuaCauHoi.cs</DependentUpon>

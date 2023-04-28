@@ -14,8 +14,9 @@ namespace minigame
     
     public partial class answers_of_student
     {
-        public int id_student { get; set; }
-        public int id_question { get; set; }
+        public int id_answer_of_student { get; set; }
+        public Nullable<int> id_student { get; set; }
+        public Nullable<int> id_question { get; set; }
         public Nullable<int> time_of_answer { get; set; }
         public string answers { get; set; }
     

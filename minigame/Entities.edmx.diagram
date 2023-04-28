@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f1bb6fed1b16421cb5c6d4aef19b25d1" Name="Diagram1">
-        <EntityTypeShape EntityType="gameshowhannguModel.answers_of_student" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+      <Diagram DiagramId="92588558f31749f6bc8acfb250fe0001" Name="Diagram1">
+        <EntityTypeShape EntityType="gameshowhannguModel.answers_of_student" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.question_topic" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.question_type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.question" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.status_led" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.statuss" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.student" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="gameshowhannguModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.team_battle" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <AssociationConnector Association="gameshowhannguModel.FK__answers_o__id_qu__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="gameshowhannguModel.FK__answers_o__id_st__5BE2A6F2" ManuallyRouted="false" />
