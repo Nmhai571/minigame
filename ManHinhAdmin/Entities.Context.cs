@@ -33,5 +33,6 @@ namespace ManHinhAdmin
         public virtual DbSet<statuss> statusses { get; set; }
         public virtual DbSet<student> students { get; set; }
         public virtual DbSet<team_battle> team_battle { get; set; }
+        public virtual DbSet<status_team> status_team { get; set; }
     }
 }

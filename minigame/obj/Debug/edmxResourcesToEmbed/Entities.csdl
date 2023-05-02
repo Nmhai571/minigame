@@ -205,5 +205,13 @@
       <End Role="team_battle" EntitySet="team_battle" />
       <End Role="student" EntitySet="students" />
     </AssociationSet>
+    <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
   </EntityContainer>
+  <EntityType Name="status_team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="count_team" Type="Int32" />
+  </EntityType>
 </Schema>

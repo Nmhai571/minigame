@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="gameshowhannguModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="answers_of_student">
           <Key>
-            <PropertyRef Name="id_student" />
-            <PropertyRef Name="id_question" />
+            <PropertyRef Name="id_answer_of_student" />
           </Key>
-          <Property Name="id_student" Type="int" Nullable="false" />
-          <Property Name="id_question" Type="int" Nullable="false" />
+          <Property Name="id_answer_of_student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_student" Type="int" />
+          <Property Name="id_question" Type="int" />
           <Property Name="time_of_answer" Type="int" />
           <Property Name="answers" Type="nvarchar" MaxLength="30" />
         </EntityType>
@@ -49,6 +49,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="count_status" Type="int" />
         </EntityType>
+        <EntityType Name="status_team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="count_team" Type="int" />
+        </EntityType>
         <EntityType Name="statuss">
           <Key>
             <PropertyRef Name="id_status" />
@@ -76,7 +83,7 @@
           <Property Name="id_topic" Type="int" />
         </EntityType>
         <Association Name="FK__answers_o__id_qu__5CD6CB2B">
-          <End Role="questions" Type="Self.questions" Multiplicity="1" />
+          <End Role="questions" Type="Self.questions" Multiplicity="0..1" />
           <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="questions">
@@ -88,7 +95,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__answers_o__id_st__5BE2A6F2">
-          <End Role="student" Type="Self.student" Multiplicity="1" />
+          <End Role="student" Type="Self.student" Multiplicity="0..1" />
           <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="student">
@@ -159,12 +166,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="gameshowhannguModelStoreContainer">
           <EntitySet Name="answers_of_student" EntityType="Self.answers_of_student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="question_topic" EntityType="Self.question_topic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="status_led" EntityType="Self.status_led" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status_team" EntityType="Self.status_team" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="statuss" EntityType="Self.statuss" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="team_battle" EntityType="Self.team_battle" Schema="dbo" store:Type="Tables" />
@@ -197,18 +205,17 @@
             <End Role="team_battle" EntitySet="team_battle" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="gameshowhannguModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="answers_of_student">
           <Key>
-            <PropertyRef Name="id_student" />
-            <PropertyRef Name="id_question" />
+            <PropertyRef Name="id_answer_of_student" />
           </Key>
-          <Property Name="id_student" Type="Int32" Nullable="false" />
-          <Property Name="id_question" Type="Int32" Nullable="false" />
+          <Property Name="id_answer_of_student" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_student" Type="Int32" />
+          <Property Name="id_question" Type="Int32" />
           <Property Name="time_of_answer" Type="Int32" />
           <Property Name="answers" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="question" Relationship="Self.FK__answers_o__id_qu__5CD6CB2B" FromRole="answers_of_student" ToRole="questions" />
@@ -287,7 +294,7 @@
           <NavigationProperty Name="students" Relationship="Self.FK__student__id_team__59063A47" FromRole="team_battle" ToRole="student" />
         </EntityType>
         <Association Name="FK__answers_o__id_qu__5CD6CB2B">
-          <End Role="questions" Type="Self.question" Multiplicity="1" />
+          <End Role="questions" Type="Self.question" Multiplicity="0..1" />
           <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="questions">
@@ -299,7 +306,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__answers_o__id_st__5BE2A6F2">
-          <End Role="student" Type="Self.student" Multiplicity="1" />
+          <End Role="student" Type="Self.student" Multiplicity="0..1" />
           <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="student">
@@ -407,16 +414,25 @@
             <End Role="team_battle" EntitySet="team_battle" />
             <End Role="student" EntitySet="students" />
           </AssociationSet>
+          <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
         </EntityContainer>
+        <EntityType Name="status_team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="count_team" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="gameshowhannguEntities">
+        <EntityContainerMapping StorageEntityContainer="gameshowhannguModelStoreContainer" CdmEntityContainer="gameshowhannguEntities">
           <EntitySetMapping Name="answers_of_student">
-            <EntityTypeMapping TypeName="Model.answers_of_student">
+            <EntityTypeMapping TypeName="gameshowhannguModel.answers_of_student">
               <MappingFragment StoreEntitySet="answers_of_student">
+                <ScalarProperty Name="id_answer_of_student" ColumnName="id_answer_of_student" />
                 <ScalarProperty Name="id_student" ColumnName="id_student" />
                 <ScalarProperty Name="id_question" ColumnName="id_question" />
                 <ScalarProperty Name="time_of_answer" ColumnName="time_of_answer" />
@@ -425,7 +441,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="question_topic">
-            <EntityTypeMapping TypeName="Model.question_topic">
+            <EntityTypeMapping TypeName="gameshowhannguModel.question_topic">
               <MappingFragment StoreEntitySet="question_topic">
                 <ScalarProperty Name="id_topic" ColumnName="id_topic" />
                 <ScalarProperty Name="name_topic" ColumnName="name_topic" />
@@ -433,7 +449,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="question_type">
-            <EntityTypeMapping TypeName="Model.question_type">
+            <EntityTypeMapping TypeName="gameshowhannguModel.question_type">
               <MappingFragment StoreEntitySet="question_type">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type_of_name" ColumnName="type_of_name" />
@@ -441,7 +457,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="questions">
-            <EntityTypeMapping TypeName="Model.question">
+            <EntityTypeMapping TypeName="gameshowhannguModel.question">
               <MappingFragment StoreEntitySet="questions">
                 <ScalarProperty Name="id_question" ColumnName="id_question" />
                 <ScalarProperty Name="true_answer" ColumnName="true_answer" />
@@ -455,7 +471,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="status_led">
-            <EntityTypeMapping TypeName="Model.status_led">
+            <EntityTypeMapping TypeName="gameshowhannguModel.status_led">
               <MappingFragment StoreEntitySet="status_led">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="count_status" ColumnName="count_status" />
@@ -463,7 +479,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="statusses">
-            <EntityTypeMapping TypeName="Model.statuss">
+            <EntityTypeMapping TypeName="gameshowhannguModel.statuss">
               <MappingFragment StoreEntitySet="statuss">
                 <ScalarProperty Name="id_status" ColumnName="id_status" />
                 <ScalarProperty Name="name_status" ColumnName="name_status" />
@@ -471,7 +487,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="students">
-            <EntityTypeMapping TypeName="Model.student">
+            <EntityTypeMapping TypeName="gameshowhannguModel.student">
               <MappingFragment StoreEntitySet="student">
                 <ScalarProperty Name="id_student" ColumnName="id_student" />
                 <ScalarProperty Name="name_account" ColumnName="name_account" />
@@ -483,11 +499,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="team_battle">
-            <EntityTypeMapping TypeName="Model.team_battle">
+            <EntityTypeMapping TypeName="gameshowhannguModel.team_battle">
               <MappingFragment StoreEntitySet="team_battle">
                 <ScalarProperty Name="id_team" ColumnName="id_team" />
                 <ScalarProperty Name="name_team" ColumnName="name_team" />
                 <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_team">
+            <EntityTypeMapping TypeName="gameshowhannguModel.status_team">
+              <MappingFragment StoreEntitySet="status_team">
+                <ScalarProperty Name="count_team" ColumnName="count_team" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

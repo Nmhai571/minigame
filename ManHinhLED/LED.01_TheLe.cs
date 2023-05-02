@@ -12,6 +12,7 @@ namespace ManHinhLED
 {
     public partial class LED1 : Form
     {
+        gameshowhannguEntities context;
         public LED1()
         {
             InitializeComponent();
@@ -19,43 +20,34 @@ namespace ManHinhLED
 
         private void LED1_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
+            //this.TopMost = true;
             // hide taskbar
             //this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void LED1_Load_1(object sender, EventArgs e)
         {
-            this.TopMost = true;
+            //this.TopMost = true;
             // hide taskbar
             //this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+            timerStatus.Start();
+        }
+
+        private void timerStatus_Tick(object sender, EventArgs e)
+        {
+            context = new gameshowhannguEntities();
+            var status = context.status_led.FirstOrDefault(x => x.id == 1);
+            if(status.count_status == 1)
+            {
+                LED2 led2 = new LED2();
+                led2.Show();
+                this.Hide();
+                timerStatus.Stop();
+            }
         }
     }
 }

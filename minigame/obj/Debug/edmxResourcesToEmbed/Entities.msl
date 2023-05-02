@@ -79,5 +79,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="status_team">
+      <EntityTypeMapping TypeName="gameshowhannguModel.status_team">
+        <MappingFragment StoreEntitySet="status_team">
+          <ScalarProperty Name="count_team" ColumnName="count_team" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -57,6 +57,7 @@ namespace minigame
             {
                 ts4.lbNameThi.Text = status.students.fullname;
                 ts4.lbTeamThi.Text = status.team.name_team;
+                ts4.lbNameCauHoi.Text = status.question.name_question;
                 MemoryStream stream = new MemoryStream(status.question.img_question);
                 Image imgQuestion = Image.FromStream(stream);
                 ts4.pbAnhThi.Image = imgQuestion;

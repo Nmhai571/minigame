@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -67,10 +68,7 @@ namespace ManHinhAdmin
             }
         }
         #endregion
-        private void btnXemCauHoi_Click(object sender, EventArgs e)
-        {
-            this.Refresh();
-        }
+       
 
         private void btnAddQ_Click(object sender, EventArgs e)
         {
@@ -132,6 +130,13 @@ namespace ManHinhAdmin
             ADM3 admin3 = new ADM3();
             admin3.Show();
             this.Hide();
+        }
+
+        private void btnXemCauHoi_Click(object sender, EventArgs e)
+        {
+            var ledCount = context.status_led.Find(1);
+            ledCount.count_status = 1;
+            context.SaveChanges();
         }
     }
 }

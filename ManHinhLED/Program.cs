@@ -13,7 +13,7 @@ namespace ManHinhLED
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LED4());
+            Application.Run(new LED1());
         }
     }
 }

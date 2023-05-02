@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="gameshowhannguModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="answers_of_student">
     <Key>
-      <PropertyRef Name="id_student" />
-      <PropertyRef Name="id_question" />
+      <PropertyRef Name="id_answer_of_student" />
     </Key>
-    <Property Name="id_student" Type="int" Nullable="false" />
-    <Property Name="id_question" Type="int" Nullable="false" />
+    <Property Name="id_answer_of_student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_student" Type="int" />
+    <Property Name="id_question" Type="int" />
     <Property Name="time_of_answer" Type="int" />
     <Property Name="answers" Type="nvarchar" MaxLength="30" />
   </EntityType>
@@ -44,6 +44,13 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="count_status" Type="int" />
   </EntityType>
+  <EntityType Name="status_team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="count_team" Type="int" />
+  </EntityType>
   <EntityType Name="statuss">
     <Key>
       <PropertyRef Name="id_status" />
@@ -71,7 +78,7 @@
     <Property Name="id_topic" Type="int" />
   </EntityType>
   <Association Name="FK__answers_o__id_qu__5CD6CB2B">
-    <End Role="questions" Type="Self.questions" Multiplicity="1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="0..1" />
     <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="questions">
@@ -83,7 +90,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__answers_o__id_st__5BE2A6F2">
-    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
     <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="student">
@@ -154,12 +161,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ModelStoreContainer">
+  <EntityContainer Name="gameshowhannguModelStoreContainer">
     <EntitySet Name="answers_of_student" EntityType="Self.answers_of_student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="question_topic" EntityType="Self.question_topic" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="status_led" EntityType="Self.status_led" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="status_team" EntityType="Self.status_team" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="statuss" EntityType="Self.statuss" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="team_battle" EntityType="Self.team_battle" Schema="dbo" store:Type="Tables" />

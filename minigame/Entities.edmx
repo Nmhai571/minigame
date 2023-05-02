@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gameshowhannguModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="gameshowhannguModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="answers_of_student">
           <Key>
             <PropertyRef Name="id_answer_of_student" />
@@ -48,6 +48,13 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="count_status" Type="int" />
+        </EntityType>
+        <EntityType Name="status_team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="count_team" Type="int" />
         </EntityType>
         <EntityType Name="statuss">
           <Key>
@@ -165,6 +172,7 @@
           <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="status_led" EntityType="Self.status_led" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status_team" EntityType="Self.status_team" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="statuss" EntityType="Self.statuss" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="team_battle" EntityType="Self.team_battle" Schema="dbo" store:Type="Tables" />
@@ -197,8 +205,7 @@
             <End Role="team_battle" EntitySet="team_battle" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gameshowhannguModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -407,7 +414,15 @@
             <End Role="team_battle" EntitySet="team_battle" />
             <End Role="student" EntitySet="students" />
           </AssociationSet>
+          <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
         </EntityContainer>
+        <EntityType Name="status_team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="count_team" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -489,6 +504,14 @@
                 <ScalarProperty Name="id_team" ColumnName="id_team" />
                 <ScalarProperty Name="name_team" ColumnName="name_team" />
                 <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_team">
+            <EntityTypeMapping TypeName="gameshowhannguModel.status_team">
+              <MappingFragment StoreEntitySet="status_team">
+                <ScalarProperty Name="count_team" ColumnName="count_team" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

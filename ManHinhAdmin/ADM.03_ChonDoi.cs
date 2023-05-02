@@ -32,9 +32,8 @@ namespace ManHinhAdmin
                 cbTeamBattle.Items.Add(item.name_team);
             }
         }
-        #endregion
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        void ChooseTeam()
         {
             ADM4 admin4 = new ADM4();
             var data = from q in context.questions
@@ -48,14 +47,14 @@ namespace ManHinhAdmin
                 admin4.lbTeamBattle.Text = item.tb.name_team;
                 admin4.lbTopic.Text = item.qt.name_topic;
                 dataName.Add(item.q.name_question);
-               
+
             }
             // lấy dữ liệu vào từng lable
-            for(int i=0; ;)
+            for (int i = 0; ;)
             {
                 admin4.lbName1.Text = dataName[i];
-                admin4.lbName2.Text = dataName[i+1];
-                admin4.lbName3.Text = dataName[i+2];
+                admin4.lbName2.Text = dataName[i + 1];
+                admin4.lbName3.Text = dataName[i + 2];
                 /*admin4.lbName4.Text = dataName[i+3];
                 admin4.lbName5.Text = dataName[i+4];
                 admin4.lbName6.Text = dataName[i+5];
@@ -68,6 +67,54 @@ namespace ManHinhAdmin
 
             admin4.Show();
             this.Hide();
+        }
+
+        #endregion
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            var team = (from t in context.team_battle
+                        where t.name_team == cbTeamBattle.Text
+                        select t).FirstOrDefault();
+            switch (team.id_team)
+            {
+                case 1:
+                    var statusTeam = context.status_team.Find(1);
+                    statusTeam.count_team = 1;
+                    context.SaveChanges();
+                    ChooseTeam();
+                    break;
+                case 2:
+                    statusTeam = context.status_team.Find(2);
+                    statusTeam.count_team = 2;
+                    context.SaveChanges();
+                    ChooseTeam();
+                    break;
+                case 3:
+                    statusTeam = context.status_team.Find(3);
+                    statusTeam.count_team = 3;
+                    context.SaveChanges();
+                    ChooseTeam();
+                    break;
+                case 4:
+                    statusTeam = context.status_team.Find(4);
+                    statusTeam.count_team = 4;
+                    context.SaveChanges();
+                    ChooseTeam();
+                    break;
+                case 5:
+                    statusTeam = context.status_team.Find(5);
+                    statusTeam.count_team = 5;
+                    context.SaveChanges();
+                    ChooseTeam();
+                    break;
+                case 6:
+                    statusTeam = context.status_team.Find(6);
+                    statusTeam.count_team = 6;
+                    context.SaveChanges();
+                    ChooseTeam();
+                    break;
+            }
         }
     }
 }

@@ -448,6 +448,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Quay Về";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel34
             // 
@@ -748,6 +749,7 @@
             this.btnAnswer1.TabIndex = 1;
             this.btnAnswer1.Text = "Đáp Án";
             this.btnAnswer1.UseVisualStyleBackColor = true;
+            this.btnAnswer1.Click += new System.EventHandler(this.btnAnswer1_Click);
             // 
             // lbName1
             // 

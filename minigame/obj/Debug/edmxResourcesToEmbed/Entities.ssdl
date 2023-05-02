@@ -44,6 +44,13 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="count_status" Type="int" />
   </EntityType>
+  <EntityType Name="status_team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="count_team" Type="int" />
+  </EntityType>
   <EntityType Name="statuss">
     <Key>
       <PropertyRef Name="id_status" />
@@ -160,6 +167,7 @@
     <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="status_led" EntityType="Self.status_led" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="status_team" EntityType="Self.status_team" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="statuss" EntityType="Self.statuss" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="team_battle" EntityType="Self.team_battle" Schema="dbo" store:Type="Tables" />

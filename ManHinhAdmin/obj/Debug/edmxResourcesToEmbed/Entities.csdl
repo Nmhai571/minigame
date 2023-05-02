@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="gameshowhannguModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="answers_of_student">
     <Key>
-      <PropertyRef Name="id_student" />
-      <PropertyRef Name="id_question" />
+      <PropertyRef Name="id_answer_of_student" />
     </Key>
-    <Property Name="id_student" Type="Int32" Nullable="false" />
-    <Property Name="id_question" Type="Int32" Nullable="false" />
+    <Property Name="id_answer_of_student" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_student" Type="Int32" />
+    <Property Name="id_question" Type="Int32" />
     <Property Name="time_of_answer" Type="Int32" />
     <Property Name="answers" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="question" Relationship="Self.FK__answers_o__id_qu__5CD6CB2B" FromRole="answers_of_student" ToRole="questions" />
@@ -85,7 +85,7 @@
     <NavigationProperty Name="students" Relationship="Self.FK__student__id_team__59063A47" FromRole="team_battle" ToRole="student" />
   </EntityType>
   <Association Name="FK__answers_o__id_qu__5CD6CB2B">
-    <End Role="questions" Type="Self.question" Multiplicity="1" />
+    <End Role="questions" Type="Self.question" Multiplicity="0..1" />
     <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="questions">
@@ -97,7 +97,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__answers_o__id_st__5BE2A6F2">
-    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="student" Type="Self.student" Multiplicity="0..1" />
     <End Role="answers_of_student" Type="Self.answers_of_student" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="student">
@@ -205,5 +205,13 @@
       <End Role="team_battle" EntitySet="team_battle" />
       <End Role="student" EntitySet="students" />
     </AssociationSet>
+    <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
   </EntityContainer>
+  <EntityType Name="status_team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="count_team" Type="Int32" />
+  </EntityType>
 </Schema>

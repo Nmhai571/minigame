@@ -85,11 +85,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXemCauHoi.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemCauHoi.Location = new System.Drawing.Point(32, 29);
+            this.btnXemCauHoi.Location = new System.Drawing.Point(636, 29);
             this.btnXemCauHoi.Name = "btnXemCauHoi";
             this.btnXemCauHoi.Size = new System.Drawing.Size(161, 43);
             this.btnXemCauHoi.TabIndex = 16;
-            this.btnXemCauHoi.Text = "Xem";
+            this.btnXemCauHoi.Text = "Hiên Đội";
             this.btnXemCauHoi.UseVisualStyleBackColor = true;
             this.btnXemCauHoi.Click += new System.EventHandler(this.btnXemCauHoi_Click);
             // 
@@ -113,7 +113,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteQ.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteQ.Location = new System.Drawing.Point(432, 29);
+            this.btnDeleteQ.Location = new System.Drawing.Point(231, 29);
             this.btnDeleteQ.Name = "btnDeleteQ";
             this.btnDeleteQ.Size = new System.Drawing.Size(161, 43);
             this.btnDeleteQ.TabIndex = 14;
@@ -127,7 +127,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditQ.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditQ.Location = new System.Drawing.Point(640, 29);
+            this.btnEditQ.Location = new System.Drawing.Point(437, 29);
             this.btnEditQ.Name = "btnEditQ";
             this.btnEditQ.Size = new System.Drawing.Size(161, 43);
             this.btnEditQ.TabIndex = 13;
@@ -141,7 +141,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddQ.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQ.Location = new System.Drawing.Point(228, 29);
+            this.btnAddQ.Location = new System.Drawing.Point(32, 29);
             this.btnAddQ.Name = "btnAddQ";
             this.btnAddQ.Size = new System.Drawing.Size(161, 43);
             this.btnAddQ.TabIndex = 11;
