@@ -40,6 +40,7 @@
             this.dgvCauHoi = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbId);
             this.panel1.Controls.Add(this.tbId);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -61,7 +63,7 @@
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(45, 84);
+            this.tbId.Location = new System.Drawing.Point(77, 85);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(138, 22);
             this.tbId.TabIndex = 3;
@@ -193,6 +195,17 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Quản Lí Trò Chơi Hán Ngữ";
             // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.ForeColor = System.Drawing.Color.Red;
+            this.lbId.Location = new System.Drawing.Point(45, 84);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(34, 22);
+            this.lbId.TabIndex = 4;
+            this.lbId.Text = "Id:";
+            // 
             // ADM1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,5 +240,6 @@
         private System.Windows.Forms.Button btnAddQ;
         private System.Windows.Forms.TextBox tbId;
         public System.Windows.Forms.DataGridView dgvCauHoi;
+        private System.Windows.Forms.Label lbId;
     }
 }

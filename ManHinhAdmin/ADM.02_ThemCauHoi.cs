@@ -61,7 +61,6 @@ namespace ManHinhAdmin
         void AddQuestion()
         {
             MemoryStream stream = new MemoryStream();
-            pbQuestion.Image.Save(stream, ImageFormat.Png);
             var resultTopic = (from qt in context.question_topic
                                where qt.name_topic == cbAddTopic.Text
                                select qt).FirstOrDefault();
@@ -69,24 +68,32 @@ namespace ManHinhAdmin
             var resultTypeQuestion = (from qt in context.question_type
                                       where qt.type_of_name == cbQuestionType.Text
                                       select qt).FirstOrDefault();
-
-            question question = new question()
+            if (resultTopic == null || resultTypeQuestion == null || tbAddQuestionName.Text == "" || tbAddAnswer.Text == "" || pbQuestion.Image == null)
             {
-                name_question = tbAddQuestionName.Text, // message
-                point = 1, 
-                id_status = 1,
-                id_topic = resultTopic.id_topic,
-                true_answer = tbAddAnswer.Text,// message
-                id_question_type = resultTypeQuestion.id,
-                img_question = stream.ToArray(), // message
-            };
+                MessageBox.Show("Please Enter Full Details");
+            }
+            else
+            {
+                pbQuestion.Image.Save(stream, ImageFormat.Png);
+                question question = new question()
+                {
 
-            context.questions.Add(question);
-            context.SaveChanges();
+                    name_question = tbAddQuestionName.Text, // message
+                    point = 1,
+                    id_status = 1,
+                    id_topic = resultTopic.id_topic,
+                    true_answer = tbAddAnswer.Text,// message
+                    id_question_type = resultTypeQuestion.id,
+                    img_question = stream.ToArray(), // message
+                };
+                context.questions.Add(question);
+                context.SaveChanges();
+                MessageBox.Show("Add Question Successfully");
+                ADM1 admin1 = new ADM1();
+                admin1.Show();
+                this.Hide();
+            }
 
-            ADM1 admin1 = new ADM1();
-            admin1.Show();
-            this.Hide();
         }
         #endregion
 

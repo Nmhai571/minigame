@@ -51,7 +51,7 @@
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.lbName6 = new System.Windows.Forms.Label();
             this.btnBatDau6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.tableLayoutPanel34 = new System.Windows.Forms.TableLayoutPanel();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tableLayoutPanel36 = new System.Windows.Forms.TableLayoutPanel();
@@ -185,6 +185,7 @@
             this.btnAnswer9.TabIndex = 3;
             this.btnAnswer9.Text = "Đáp Án";
             this.btnAnswer9.UseVisualStyleBackColor = true;
+            this.btnAnswer9.Click += new System.EventHandler(this.btnAnswer9_Click);
             // 
             // tableLayoutPanel29
             // 
@@ -222,6 +223,7 @@
             this.btnBatDau9.TabIndex = 3;
             this.btnBatDau9.Text = "Bắt Đầu";
             this.btnBatDau9.UseVisualStyleBackColor = true;
+            this.btnBatDau9.Click += new System.EventHandler(this.btnBatDau9_Click);
             // 
             // lbName9
             // 
@@ -232,7 +234,6 @@
             this.lbName9.Name = "lbName9";
             this.lbName9.Size = new System.Drawing.Size(335, 95);
             this.lbName9.TabIndex = 1;
-            this.lbName9.Text = "label10";
             this.lbName9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStatus8
@@ -255,6 +256,7 @@
             this.btnBatDau8.TabIndex = 3;
             this.btnBatDau8.Text = "Bắt Đầu";
             this.btnBatDau8.UseVisualStyleBackColor = true;
+            this.btnBatDau8.Click += new System.EventHandler(this.btnBatDau8_Click);
             // 
             // btnAnswer8
             // 
@@ -265,6 +267,7 @@
             this.btnAnswer8.TabIndex = 3;
             this.btnAnswer8.Text = "Đáp Án";
             this.btnAnswer8.UseVisualStyleBackColor = true;
+            this.btnAnswer8.Click += new System.EventHandler(this.btnAnswer8_Click);
             // 
             // tableLayoutPanel26
             // 
@@ -323,7 +326,6 @@
             this.lbName8.Name = "lbName8";
             this.lbName8.Size = new System.Drawing.Size(335, 95);
             this.lbName8.TabIndex = 1;
-            this.lbName8.Text = "label9";
             this.lbName8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStatus7
@@ -346,7 +348,6 @@
             this.lbName7.Name = "lbName7";
             this.lbName7.Size = new System.Drawing.Size(336, 95);
             this.lbName7.TabIndex = 1;
-            this.lbName7.Text = "label8";
             this.lbName7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBatDau7
@@ -358,6 +359,7 @@
             this.btnBatDau7.TabIndex = 3;
             this.btnBatDau7.Text = "Bắt Đầu";
             this.btnBatDau7.UseVisualStyleBackColor = true;
+            this.btnBatDau7.Click += new System.EventHandler(this.btnBatDau7_Click);
             // 
             // btnAnswer7
             // 
@@ -368,6 +370,7 @@
             this.btnAnswer7.TabIndex = 3;
             this.btnAnswer7.Text = "Đáp Án";
             this.btnAnswer7.UseVisualStyleBackColor = true;
+            this.btnAnswer7.Click += new System.EventHandler(this.btnAnswer7_Click);
             // 
             // tableLayoutPanel23
             // 
@@ -426,7 +429,6 @@
             this.lbName6.Name = "lbName6";
             this.lbName6.Size = new System.Drawing.Size(336, 95);
             this.lbName6.TabIndex = 1;
-            this.lbName6.Text = "label7";
             this.lbName6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBatDau6
@@ -438,17 +440,18 @@
             this.btnBatDau6.TabIndex = 3;
             this.btnBatDau6.Text = "Bắt Đầu";
             this.btnBatDau6.UseVisualStyleBackColor = true;
+            this.btnBatDau6.Click += new System.EventHandler(this.btnBatDau6_Click);
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(1085, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quay Về";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBack.Location = new System.Drawing.Point(1085, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(155, 38);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Quay Về";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // tableLayoutPanel34
             // 
@@ -472,7 +475,6 @@
             this.lbTopic.Name = "lbTopic";
             this.lbTopic.Size = new System.Drawing.Size(1243, 50);
             this.lbTopic.TabIndex = 2;
-            this.lbTopic.Text = "label12";
             this.lbTopic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel36
@@ -480,7 +482,7 @@
             this.tableLayoutPanel36.ColumnCount = 2;
             this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.06767F));
             this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.93233F));
-            this.tableLayoutPanel36.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel36.Controls.Add(this.btnBack, 1, 0);
             this.tableLayoutPanel36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel36.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel36.Name = "tableLayoutPanel36";
@@ -499,7 +501,6 @@
             this.lbTeamBattle.Name = "lbTeamBattle";
             this.lbTeamBattle.Size = new System.Drawing.Size(1249, 63);
             this.lbTeamBattle.TabIndex = 0;
-            this.lbTeamBattle.Text = "label1";
             this.lbTeamBattle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel35
@@ -543,7 +544,6 @@
             this.lbName10.Name = "lbName10";
             this.lbName10.Size = new System.Drawing.Size(335, 95);
             this.lbName10.TabIndex = 1;
-            this.lbName10.Text = "label11";
             this.lbName10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStatus6
@@ -577,6 +577,7 @@
             this.btnAnswer10.TabIndex = 3;
             this.btnAnswer10.Text = "Đáp Án";
             this.btnAnswer10.UseVisualStyleBackColor = true;
+            this.btnAnswer10.Click += new System.EventHandler(this.btnAnswer10_Click);
             // 
             // btnBatDau10
             // 
@@ -587,6 +588,7 @@
             this.btnBatDau10.TabIndex = 3;
             this.btnBatDau10.Text = "Bắt Đầu";
             this.btnBatDau10.UseVisualStyleBackColor = true;
+            this.btnBatDau10.Click += new System.EventHandler(this.btnBatDau10_Click);
             // 
             // tableLayoutPanel31
             // 
@@ -645,6 +647,7 @@
             this.btnAnswer6.TabIndex = 3;
             this.btnAnswer6.Text = "Đáp Án";
             this.btnAnswer6.UseVisualStyleBackColor = true;
+            this.btnAnswer6.Click += new System.EventHandler(this.btnAnswer6_Click);
             // 
             // btnAnswer3
             // 
@@ -655,6 +658,7 @@
             this.btnAnswer3.TabIndex = 2;
             this.btnAnswer3.Text = "Đáp Án";
             this.btnAnswer3.UseVisualStyleBackColor = true;
+            this.btnAnswer3.Click += new System.EventHandler(this.btnAnswer3_Click);
             // 
             // lbName2
             // 
@@ -665,7 +669,6 @@
             this.lbName2.Name = "lbName2";
             this.lbName2.Size = new System.Drawing.Size(322, 95);
             this.lbName2.TabIndex = 1;
-            this.lbName2.Text = "label3";
             this.lbName2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
@@ -760,7 +763,6 @@
             this.lbName1.Name = "lbName1";
             this.lbName1.Size = new System.Drawing.Size(323, 95);
             this.lbName1.TabIndex = 1;
-            this.lbName1.Text = "Name Question";
             this.lbName1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAnswer2
@@ -772,6 +774,7 @@
             this.btnAnswer2.TabIndex = 1;
             this.btnAnswer2.Text = "Đáp Án";
             this.btnAnswer2.UseVisualStyleBackColor = true;
+            this.btnAnswer2.Click += new System.EventHandler(this.btnAnswer2_Click);
             // 
             // btnBatDau2
             // 
@@ -782,6 +785,7 @@
             this.btnBatDau2.TabIndex = 0;
             this.btnBatDau2.Text = "Bắt Đầu";
             this.btnBatDau2.UseVisualStyleBackColor = true;
+            this.btnBatDau2.Click += new System.EventHandler(this.btnBatDau2_Click);
             // 
             // btnStatus2
             // 
@@ -878,6 +882,7 @@
             this.btnBatDau3.TabIndex = 1;
             this.btnBatDau3.Text = "Bắt Đầu";
             this.btnBatDau3.UseVisualStyleBackColor = true;
+            this.btnBatDau3.Click += new System.EventHandler(this.btnBatDau3_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -964,7 +969,6 @@
             this.lbName3.Name = "lbName3";
             this.lbName3.Size = new System.Drawing.Size(322, 95);
             this.lbName3.TabIndex = 1;
-            this.lbName3.Text = "label4";
             this.lbName3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel12
@@ -1008,6 +1012,7 @@
             this.btnAnswer4.TabIndex = 3;
             this.btnAnswer4.Text = "Đáp Án";
             this.btnAnswer4.UseVisualStyleBackColor = true;
+            this.btnAnswer4.Click += new System.EventHandler(this.btnAnswer4_Click);
             // 
             // tableLayoutPanel14
             // 
@@ -1045,6 +1050,7 @@
             this.btnBatDau4.TabIndex = 2;
             this.btnBatDau4.Text = "Bắt Đầu";
             this.btnBatDau4.UseVisualStyleBackColor = true;
+            this.btnBatDau4.Click += new System.EventHandler(this.btnBatDau4_Click);
             // 
             // lbName4
             // 
@@ -1055,7 +1061,6 @@
             this.lbName4.Name = "lbName4";
             this.lbName4.Size = new System.Drawing.Size(322, 95);
             this.lbName4.TabIndex = 1;
-            this.lbName4.Text = "label5";
             this.lbName4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel15
@@ -1099,6 +1104,7 @@
             this.btnAnswer5.TabIndex = 3;
             this.btnAnswer5.Text = "Đáp Án";
             this.btnAnswer5.UseVisualStyleBackColor = true;
+            this.btnAnswer5.Click += new System.EventHandler(this.btnAnswer5_Click);
             // 
             // tableLayoutPanel17
             // 
@@ -1136,6 +1142,7 @@
             this.btnBatDau5.TabIndex = 3;
             this.btnBatDau5.Text = "Bắt Đầu";
             this.btnBatDau5.UseVisualStyleBackColor = true;
+            this.btnBatDau5.Click += new System.EventHandler(this.btnBatDau5_Click);
             // 
             // lbName5
             // 
@@ -1146,7 +1153,6 @@
             this.lbName5.Name = "lbName5";
             this.lbName5.Size = new System.Drawing.Size(322, 95);
             this.lbName5.TabIndex = 1;
-            this.lbName5.Text = "label6";
             this.lbName5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel18
@@ -1283,7 +1289,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         public System.Windows.Forms.Label lbName6;
         private System.Windows.Forms.Button btnBatDau6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel34;
         public System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel36;

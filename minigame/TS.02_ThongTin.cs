@@ -13,7 +13,7 @@ namespace minigame
 {
     public partial class TS2 : Form
     {
-        gameshowhannguEntities context = new gameshowhannguEntities();
+        gameshowhannguEntities context;
         public TS2()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace minigame
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            
+            context = new gameshowhannguEntities();
             TS3 ts3 = new TS3();
             TS4 ts4 = new TS4();
             var status = (from statuss in context.statusses

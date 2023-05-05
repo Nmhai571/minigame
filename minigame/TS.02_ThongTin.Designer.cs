@@ -84,7 +84,6 @@
             this.lbTeam.Name = "lbTeam";
             this.lbTeam.Size = new System.Drawing.Size(694, 99);
             this.lbTeam.TabIndex = 3;
-            this.lbTeam.Text = "Đội 1";
             this.lbTeam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbName
@@ -96,7 +95,6 @@
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(694, 103);
             this.lbName.TabIndex = 1;
-            this.lbName.Text = "Nguyễn Minh Hải";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1

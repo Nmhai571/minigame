@@ -29,31 +29,40 @@ namespace minigame
 
         void Login()
         {
-            var student = from s in context.students
+            var student = (from s in context.students
                           .Where(x => x.name_account.Equals(tbAccount.Text) && x.pass.Equals(tbPassword.Text))
-                          join t in context.team_battle on s.id_team equals t.id_team
-                          select new
-                          {
-                              Name = s.fullname,
-                              Team = t.name_team
-                          };
-            if(string.IsNullOrEmpty(tbAccount.Text) || string.IsNullOrEmpty(tbPassword.Text))
+                           join t in context.team_battle on s.id_team equals t.id_team
+                           select new
+                           {
+                               s,
+                               t
+                           }).FirstOrDefault();
+
+
+
+            if (string.IsNullOrEmpty(tbAccount.Text) || string.IsNullOrEmpty(tbPassword.Text))
             {
-                MessageBox.Show("Tài Khoản Hoặc Mật Khẩu Không Thể Trống!!!");
+                MessageBox.Show("Your Username Or Password Cannot Be Null");
             }
-            TS2 ts2 = new TS2();
-            foreach (var item in student)
+            else
             {
-                if (item != null)
+                if (student == null)
                 {
-                    ts2.lbName.Text = item.Name;
-                    ts2.lbTeam.Text = item.Team;
+                    MessageBox.Show("The Username Or Password You Entered Is Incorrect!!!!");
+                }
+                else
+                {
+                    TS2 ts2 = new TS2();
+                    ts2.lbName.Text = student.s.fullname;
+                    ts2.lbTeam.Text = student.t.name_team;
+                    MessageBox.Show("Successfully Logs In");
                     ts2.Show();
                     this.Hide();
+
                 }
-                else MessageBox.Show("tài khoản hoặc mật khẩu không đúng!!!");
             }
         }
+
         #endregion
 
         private void button1_Click(object sender, EventArgs e)

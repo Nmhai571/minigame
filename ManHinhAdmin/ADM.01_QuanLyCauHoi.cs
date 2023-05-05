@@ -64,7 +64,10 @@ namespace ManHinhAdmin
             {
                 context.questions.Remove(deleteQuesion);
                 context.SaveChanges();
-                LoadData();
+                MessageBox.Show("successful delete");
+                ADM1 admin1 = new ADM1();
+                admin1.Show();
+                this.Hide();
             }
         }
         #endregion
@@ -138,5 +141,7 @@ namespace ManHinhAdmin
             ledCount.count_status = 1;
             context.SaveChanges();
         }
+
+        
     }
 }
