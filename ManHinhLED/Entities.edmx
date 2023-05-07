@@ -49,6 +49,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="count_status" Type="int" />
         </EntityType>
+        <EntityType Name="status_next_question">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="count_status_next_question" Type="int" />
+        </EntityType>
         <EntityType Name="status_team">
           <Key>
             <PropertyRef Name="id" />
@@ -172,6 +179,7 @@
           <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="status_led" EntityType="Self.status_led" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status_next_question" EntityType="Self.status_next_question" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="status_team" EntityType="Self.status_team" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="statuss" EntityType="Self.statuss" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
@@ -415,6 +423,7 @@
             <End Role="student" EntitySet="students" />
           </AssociationSet>
           <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
+          <EntitySet Name="status_next_question" EntityType="gameshowhannguModel.status_next_question" />
         </EntityContainer>
         <EntityType Name="status_team">
           <Key>
@@ -422,6 +431,13 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="count_team" Type="Int32" />
+        </EntityType>
+        <EntityType Name="status_next_question">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="count_status_next_question" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -511,6 +527,14 @@
             <EntityTypeMapping TypeName="gameshowhannguModel.status_team">
               <MappingFragment StoreEntitySet="status_team">
                 <ScalarProperty Name="count_team" ColumnName="count_team" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_next_question">
+            <EntityTypeMapping TypeName="gameshowhannguModel.status_next_question">
+              <MappingFragment StoreEntitySet="status_next_question">
+                <ScalarProperty Name="count_status_next_question" ColumnName="count_status_next_question" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

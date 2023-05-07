@@ -21,6 +21,25 @@ create table status_led
 	count_status int,
 	primary key (id)
 );
+
+-- bảng status chuyển câu
+create table status_next_question
+(
+	id int IDENTITY(1,1),
+	count_status_next_question int,
+	primary key (id)
+);
+insert into status_next_question(count_status_next_question) values (0);
+
+create table status_team
+(
+	id int IDENTITY(1,1),
+	count_team int,
+	primary key(id)
+);
+insert into status_team(count_team) values (0);
+
+
 insert into status_led(count_status) values (0);
 
 --Bảng Loại Câu Hỏi

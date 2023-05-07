@@ -38,6 +38,10 @@ namespace ManHinhAdmin
 
             btnStatus1.Text = status.s.name_status;
             btnStatus1.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer1_Click(object sender, EventArgs e)
@@ -73,6 +77,10 @@ namespace ManHinhAdmin
 
             btnStatus2.Text = status.s.name_status;
             btnStatus2.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer2_Click(object sender, EventArgs e)
@@ -107,6 +115,10 @@ namespace ManHinhAdmin
 
             btnStatus3.Text = status.s.name_status;
             btnStatus3.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer3_Click(object sender, EventArgs e)
@@ -141,6 +153,10 @@ namespace ManHinhAdmin
 
             btnStatus4.Text = status.s.name_status;
             btnStatus4.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer4_Click(object sender, EventArgs e)
@@ -160,6 +176,8 @@ namespace ManHinhAdmin
             var statusLed = context.status_led.Find(1);
             statusLed.count_status = 2;
             context.SaveChanges();
+
+
         }
 
         private void btnBatDau5_Click(object sender, EventArgs e)
@@ -175,6 +193,10 @@ namespace ManHinhAdmin
 
             btnStatus5.Text = status.s.name_status;
             btnStatus5.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer5_Click(object sender, EventArgs e)
@@ -209,6 +231,10 @@ namespace ManHinhAdmin
 
             btnStatus6.Text = status.s.name_status;
             btnStatus6.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer6_Click(object sender, EventArgs e)
@@ -243,6 +269,10 @@ namespace ManHinhAdmin
 
             btnStatus7.Text = status.s.name_status;
             btnStatus7.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer7_Click(object sender, EventArgs e)
@@ -277,6 +307,10 @@ namespace ManHinhAdmin
 
             btnStatus8.Text = status.s.name_status;
             btnStatus8.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer8_Click(object sender, EventArgs e)
@@ -311,6 +345,10 @@ namespace ManHinhAdmin
 
             btnStatus9.Text = status.s.name_status;
             btnStatus9.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer9_Click(object sender, EventArgs e)
@@ -345,6 +383,10 @@ namespace ManHinhAdmin
 
             btnStatus10.Text = status.s.name_status;
             btnStatus10.BackColor = Color.Yellow;
+
+            var nextQuestion = context.status_next_question.Find(1);
+            nextQuestion.count_status_next_question = 1;
+            context.SaveChanges();
         }
 
         private void btnAnswer10_Click(object sender, EventArgs e)

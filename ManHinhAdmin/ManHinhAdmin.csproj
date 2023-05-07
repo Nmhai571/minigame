@@ -120,6 +120,9 @@
     <Compile Include="status_led.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="status_next_question.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="status_team.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>

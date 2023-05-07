@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbCountDown = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.lbNameCauHoi = new System.Windows.Forms.Label();
@@ -47,7 +48,7 @@
             this.lbAnswerA = new System.Windows.Forms.Label();
             this.pbAnhThi = new System.Windows.Forms.PictureBox();
             this.timerCount = new System.Windows.Forms.Timer(this.components);
-            this.lbCountDown = new System.Windows.Forms.Label();
+            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -108,6 +109,18 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(486, 227);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // lbCountDown
+            // 
+            this.lbCountDown.AutoSize = true;
+            this.lbCountDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCountDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountDown.Location = new System.Drawing.Point(88, 0);
+            this.lbCountDown.Name = "lbCountDown";
+            this.lbCountDown.Size = new System.Drawing.Size(259, 227);
+            this.lbCountDown.TabIndex = 0;
+            this.lbCountDown.Text = " 10";
+            this.lbCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
@@ -151,7 +164,6 @@
             this.lbNameCauHoi.Name = "lbNameCauHoi";
             this.lbNameCauHoi.Size = new System.Drawing.Size(448, 63);
             this.lbNameCauHoi.TabIndex = 3;
-            this.lbNameCauHoi.Text = "label7";
             this.lbNameCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbTeamThi
@@ -163,7 +175,6 @@
             this.lbTeamThi.Name = "lbTeamThi";
             this.lbTeamThi.Size = new System.Drawing.Size(448, 66);
             this.lbTeamThi.TabIndex = 2;
-            this.lbTeamThi.Text = "label5";
             this.lbTeamThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbNameThi
@@ -175,7 +186,6 @@
             this.lbNameThi.Name = "lbNameThi";
             this.lbNameThi.Size = new System.Drawing.Size(448, 66);
             this.lbNameThi.TabIndex = 0;
-            this.lbNameThi.Text = "label2";
             this.lbNameThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbNameThi.UseCompatibleTextRendering = true;
             // 
@@ -311,17 +321,10 @@
             this.timerCount.Interval = 1000;
             this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick_1);
             // 
-            // lbCountDown
+            // timerQuestion
             // 
-            this.lbCountDown.AutoSize = true;
-            this.lbCountDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbCountDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountDown.Location = new System.Drawing.Point(88, 0);
-            this.lbCountDown.Name = "lbCountDown";
-            this.lbCountDown.Size = new System.Drawing.Size(259, 227);
-            this.lbCountDown.TabIndex = 0;
-            this.lbCountDown.Text = " 10";
-            this.lbCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerQuestion.Interval = 5000;
+            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
             // TS3
             // 
@@ -371,5 +374,6 @@
         public System.Windows.Forms.PictureBox pbAnhThi;
         private System.Windows.Forms.Timer timerCount;
         private System.Windows.Forms.Label lbCountDown;
+        private System.Windows.Forms.Timer timerQuestion;
     }
 }

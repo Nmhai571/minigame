@@ -1,13 +1,10 @@
 ﻿using ManHinhLED.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ManHinhLED
@@ -42,7 +39,7 @@ namespace ManHinhLED
                               join statusQuestion in context.statusses on question.id_status equals statusQuestion.id_status
                               where teams.id_team == statusTeam.count_team && statusQuestion.id_status == 2
                               select new { stu, answer, question };
-                if(student != null)
+                if (student != null)
                 {
                     List<KQCauViewModel> ltsStudent = new List<KQCauViewModel>();
                     foreach (var item in student)
@@ -59,28 +56,39 @@ namespace ManHinhLED
                         kqCau.AnswerOfStudent = item.answer.answers;
                         ltsStudent.Add(kqCau);
                     }
+
+                    var count = ltsStudent.Count();
+
                     for (int i = 0; ;)
                     {
-                        lbNameStudent1.Text = ltsStudent[i].Fullname;
-                        lbNameStudent2.Text = ltsStudent[i + 1].Fullname;
-                        lbNameStudent3.Text = ltsStudent[i + 2].Fullname;
-                        lbNameStudent4.Text = ltsStudent[i + 3].Fullname;
-                        lbNameStudent5.Text = ltsStudent[i + 4].Fullname;
-                        lbNameStudent6.Text = ltsStudent[i + 5].Fullname;
+                        if (count == 1)
+                        {
+                            lbNameStudent1.Text = ltsStudent[i].Fullname;
+                            lbTime1.Text = Convert.ToString(ltsStudent[i].TimeOfStudent);
+                            lbAnswer1.Text = ltsStudent[i].AnswerOfStudent;
+                            break;
 
-                        lbTime1.Text = Convert.ToString(ltsStudent[i].TimeOfStudent);
-                        lbTime2.Text = Convert.ToString(ltsStudent[i + 1].TimeOfStudent);
-                        lbTime3.Text = Convert.ToString(ltsStudent[i + 2].TimeOfStudent);
-                        lbTime4.Text = Convert.ToString(ltsStudent[i + 3].TimeOfStudent);
-                        lbTime5.Text = Convert.ToString(ltsStudent[i + 4].TimeOfStudent);
-                        lbTime6.Text = Convert.ToString(ltsStudent[i + 5].TimeOfStudent);
+                        }
+                        //lbNameStudent1.Text = ltsStudent[i].Fullname;
+                        /* lbNameStudent2.Text = ltsStudent[i + 1].Fullname;
+                         lbNameStudent3.Text = ltsStudent[i + 2].Fullname;
+                         lbNameStudent4.Text = ltsStudent[i + 3].Fullname;
+                         lbNameStudent5.Text = ltsStudent[i + 4].Fullname;
+                         lbNameStudent6.Text = ltsStudent[i + 5].Fullname;
 
-                        lbAnswer1.Text = ltsStudent[i].AnswerOfStudent;
-                        lbAnswer2.Text = ltsStudent[i + 1].AnswerOfStudent;
-                        lbAnswer3.Text = ltsStudent[i + 2].AnswerOfStudent;
-                        lbAnswer4.Text = ltsStudent[i + 3].AnswerOfStudent;
-                        lbAnswer5.Text = ltsStudent[i + 4].AnswerOfStudent;
-                        lbAnswer6.Text = ltsStudent[i + 5].AnswerOfStudent;
+                         lbTime1.Text = Convert.ToString(ltsStudent[i].TimeOfStudent);
+                         lbTime2.Text = Convert.ToString(ltsStudent[i + 1].TimeOfStudent);
+                         lbTime3.Text = Convert.ToString(ltsStudent[i + 2].TimeOfStudent);
+                         lbTime4.Text = Convert.ToString(ltsStudent[i + 3].TimeOfStudent);
+                         lbTime5.Text = Convert.ToString(ltsStudent[i + 4].TimeOfStudent);
+                         lbTime6.Text = Convert.ToString(ltsStudent[i + 5].TimeOfStudent);
+
+                         lbAnswer1.Text = ltsStudent[i].AnswerOfStudent;
+                         lbAnswer2.Text = ltsStudent[i + 1].AnswerOfStudent;
+                         lbAnswer3.Text = ltsStudent[i + 2].AnswerOfStudent;
+                         lbAnswer4.Text = ltsStudent[i + 3].AnswerOfStudent;
+                         lbAnswer5.Text = ltsStudent[i + 4].AnswerOfStudent;
+                         lbAnswer6.Text = ltsStudent[i + 5].AnswerOfStudent;*/
                         break;
                     }
                     this.Refresh();
@@ -101,7 +109,7 @@ namespace ManHinhLED
                 lbAnswerQuestion.Text = answer.true_answer;
                 statusLed.count_status = 1;
                 this.Refresh();
-                timerKQCau.Stop();
+                //timerKQCau.Stop();
                 timerShowAnswer.Stop();
             }
         }

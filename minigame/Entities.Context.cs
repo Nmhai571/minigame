@@ -34,5 +34,6 @@ namespace minigame
         public virtual DbSet<student> students { get; set; }
         public virtual DbSet<team_battle> team_battle { get; set; }
         public virtual DbSet<status_team> status_team { get; set; }
+        public virtual DbSet<status_next_question> status_next_question { get; set; }
     }
 }

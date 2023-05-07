@@ -87,5 +87,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="status_next_question">
+      <EntityTypeMapping TypeName="gameshowhannguModel.status_next_question">
+        <MappingFragment StoreEntitySet="status_next_question">
+          <ScalarProperty Name="count_status_next_question" ColumnName="count_status_next_question" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

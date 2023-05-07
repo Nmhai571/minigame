@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="da305407ae6245ef9c7e27ca89e88568" Name="Diagram1">
+      <Diagram DiagramId="da305407ae6245ef9c7e27ca89e88568" Name="Diagram1" ZoomLevel="47">
         <EntityTypeShape EntityType="gameshowhannguModel.answers_of_student" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.question_topic" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="gameshowhannguModel.question_type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
@@ -21,6 +21,7 @@
         <AssociationConnector Association="gameshowhannguModel.FK__questions__id_st__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="gameshowhannguModel.FK__student__id_team__59063A47" ManuallyRouted="false" />
         <EntityTypeShape EntityType="gameshowhannguModel.status_team" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="gameshowhannguModel.status_next_question" Width="1.5" PointX="7.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -39,13 +39,14 @@ namespace ManHinhLED
                               select stu;
                 var question = (from que in context.questions
                                 join sta in context.statusses on que.id_status equals sta.id_status
-                                where sta.id_status == 2
+                                where que.id_status == 2
                                 select que).FirstOrDefault();
                 if(question != null)
                 {
                     MemoryStream stream = new MemoryStream(question.img_question);
                     Image imgQuestion = Image.FromStream(stream);
                     led3.pbImageQuestion.Image = imgQuestion;
+                    led3.lbNameQuestion.Text = question.name_question;
                     List<string> ltsStudent = new List<string>();
                     foreach (var item in student)
                     {
@@ -84,6 +85,7 @@ namespace ManHinhLED
                 MemoryStream stream = new MemoryStream(question.img_question);
                 Image imgQuestion = Image.FromStream(stream);
                 led3.pbImageQuestion.Image = imgQuestion;
+                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
@@ -120,6 +122,7 @@ namespace ManHinhLED
                 MemoryStream stream = new MemoryStream(question.img_question);
                 Image imgQuestion = Image.FromStream(stream);
                 led3.pbImageQuestion.Image = imgQuestion;
+                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
@@ -156,6 +159,7 @@ namespace ManHinhLED
                 MemoryStream stream = new MemoryStream(question.img_question);
                 Image imgQuestion = Image.FromStream(stream);
                 led3.pbImageQuestion.Image = imgQuestion;
+                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
@@ -192,6 +196,7 @@ namespace ManHinhLED
                 MemoryStream stream = new MemoryStream(question.img_question);
                 Image imgQuestion = Image.FromStream(stream);
                 led3.pbImageQuestion.Image = imgQuestion;
+                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
@@ -228,6 +233,7 @@ namespace ManHinhLED
                 MemoryStream stream = new MemoryStream(question.img_question);
                 Image imgQuestion = Image.FromStream(stream);
                 led3.pbImageQuestion.Image = imgQuestion;
+                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {

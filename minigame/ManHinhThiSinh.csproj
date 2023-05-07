@@ -91,6 +91,9 @@
     <Compile Include="status_led.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="status_next_question.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="status_team.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -124,6 +127,7 @@
     <Compile Include="TS.04_MHThiMatching.Designer.cs">
       <DependentUpon>TS.04_MHThiMatching.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\KQCauViewModel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

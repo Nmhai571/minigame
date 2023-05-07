@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace minigame
 {
     public partial class TS3 : Form
     {
-        gameshowhannguEntities context = new gameshowhannguEntities();
+        gameshowhannguEntities context;
         public TS3()
         {
             InitializeComponent();
@@ -17,6 +19,7 @@ namespace minigame
         private void TS_Load(object sender, EventArgs e)
         {
             timerCount.Start();
+            timerQuestion.Start();
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
             //this.WindowState = FormWindowState.Maximized;
@@ -28,14 +31,13 @@ namespace minigame
         {
             if (labelSelected == false)
             {
+                context = new gameshowhannguEntities();
                 var question = (from q in context.questions
                                 select q)
                                .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
                 var student = (from s in context.students
                                select s)
                                .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
                 answers_of_student answer = new answers_of_student()
                 {
                     id_student = student.id_student,
@@ -43,10 +45,8 @@ namespace minigame
                     answers = lbAnswerA.Text,
                     time_of_answer = 10 - countDown
                 };
-
                 context.answers_of_student.Add(answer);
                 context.SaveChanges();
-
                 lbAnswerA.ForeColor = Color.White;
                 lbAnswerA.MouseLeave -= lbAnswerA_MouseLeave;
                 labelSelected = true;
@@ -58,26 +58,24 @@ namespace minigame
         {
             if (labelSelected == false)
             {
+                context = new gameshowhannguEntities();
+
                 var question = (from q in context.questions
                                 select q)
                                .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
                 var student = (from s in context.students
                                select s)
                                .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
                 answers_of_student answer = new answers_of_student()
                 {
                     id_student = student.id_student,
                     id_question = question.id_question,
                     answers = lbAnswerB.Text,
                     time_of_answer = 10 - countDown
-
                 };
 
                 context.answers_of_student.Add(answer);
                 context.SaveChanges();
-
                 lbAnswerB.ForeColor = Color.White;
                 lbAnswerB.MouseLeave -= lbAnswerB_MouseLeave;
                 labelSelected = true;
@@ -90,14 +88,14 @@ namespace minigame
         {
             if (labelSelected == false)
             {
+                context = new gameshowhannguEntities();
+
                 var question = (from q in context.questions
                                 select q)
                                .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
                 var student = (from s in context.students
                                select s)
                                .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
                 answers_of_student answer = new answers_of_student()
                 {
                     id_student = student.id_student,
@@ -109,12 +107,10 @@ namespace minigame
 
                 context.answers_of_student.Add(answer);
                 context.SaveChanges();
-
                 lbAnswerC.ForeColor = Color.White;
                 lbAnswerC.MouseLeave -= lbAnswerB_MouseLeave;
                 labelSelected = true;
                 timerCount.Stop();
-
             }
         }
 
@@ -122,14 +118,14 @@ namespace minigame
         {
             if (labelSelected == false)
             {
+                context = new gameshowhannguEntities();
+
                 var question = (from q in context.questions
                                 select q)
                                .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
                 var student = (from s in context.students
                                select s)
                                .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
                 answers_of_student answer = new answers_of_student()
                 {
                     id_student = student.id_student,
@@ -138,15 +134,12 @@ namespace minigame
                     time_of_answer = 10 - countDown
 
                 };
-
                 context.answers_of_student.Add(answer);
                 context.SaveChanges();
-
                 lbAnswerD.ForeColor = Color.White;
                 lbAnswerD.MouseLeave -= lbAnswerB_MouseLeave;
                 labelSelected = true;
                 timerCount.Stop();
-
             }
         }
 
@@ -215,6 +208,67 @@ namespace minigame
         {
             countDown--;
             lbCountDown.Text = countDown.ToString();
+            if(countDown  == 0)
+            {
+                timerCount.Stop();
+                labelSelected = true;
+            }
+        }
+
+        private void timerQuestion_Tick(object sender, EventArgs e)
+        {
+            context = new gameshowhannguEntities();
+
+            var nextQuestion = context.status_next_question.Find(1);
+            if(nextQuestion.count_status_next_question == 1)
+            {
+                nextQuestion.count_status_next_question = 0;
+                context.SaveChanges();
+
+                
+                var status = (from statuss in context.statusses
+                              join question in context.questions on statuss.id_status equals question.id_status
+                              join qtype in context.question_type on question.id_question_type equals qtype.id
+                              join qtopic in context.question_topic on question.id_topic equals qtopic.id_topic
+                              join team in context.team_battle on qtopic.id_topic equals team.id_topic
+                              join students in context.students on team.id_team equals students.id_team
+                              where statuss.id_status == 2 && students.fullname.Equals(lbNameThi.Text) && team.name_team.Equals(lbTeamThi.Text)
+                              select new { statuss, question, students, team, qtype }).FirstOrDefault();
+                if (status != null)
+                {
+
+
+                    if (status.qtype.id == 1)
+                    {
+                        labelSelected = false;
+                        //TS3 ts3 = new TS3();
+                        lbNameThi.Text = status.students.fullname;
+                        lbTeamThi.Text = status.team.name_team;
+                        lbNameCauHoi.Text = status.question.name_question;
+                        MemoryStream stream = new MemoryStream(status.question.img_question);
+                        Image imgQuestion = Image.FromStream(stream);
+                        pbAnhThi.Image = imgQuestion;
+                        countDown = 10;
+                        timerCount.Start();
+                        this.Refresh();
+                    }
+                    else
+                    {
+                        labelSelected = false;
+                        TS4 ts4 = new TS4();
+                        ts4.lbNameThi.Text = status.students.fullname;
+                        ts4.lbTeamThi.Text = status.team.name_team;
+                        ts4.lbNameCauHoi.Text = status.question.name_question;
+                        MemoryStream stream = new MemoryStream(status.question.img_question);
+                        Image imgQuestion = Image.FromStream(stream);
+                        ts4.pbAnhThi.Image = imgQuestion;
+                        ts4.Show();
+                        this.Hide();
+                    }
+                }
+            }
+
+            
         }
     }
 }

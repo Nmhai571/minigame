@@ -21,6 +21,7 @@
         <AssociationConnector Association="gameshowhannguModel.FK__questions__id_st__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="gameshowhannguModel.FK__student__id_team__59063A47" ManuallyRouted="false" />
         <EntityTypeShape EntityType="gameshowhannguModel.status_team" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="gameshowhannguModel.status_next_question" Width="1.5" PointX="7.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
