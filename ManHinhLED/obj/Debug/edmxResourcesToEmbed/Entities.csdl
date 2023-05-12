@@ -207,6 +207,7 @@
     </AssociationSet>
     <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
     <EntitySet Name="status_next_question" EntityType="gameshowhannguModel.status_next_question" />
+    <EntitySet Name="next_question_led" EntityType="gameshowhannguModel.next_question_led" />
   </EntityContainer>
   <EntityType Name="status_team">
     <Key>
@@ -221,5 +222,12 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="count_status_next_question" Type="Int32" />
+  </EntityType>
+  <EntityType Name="next_question_led">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="next_led_status" Type="Int32" />
   </EntityType>
 </Schema>

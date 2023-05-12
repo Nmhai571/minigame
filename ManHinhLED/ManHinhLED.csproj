@@ -91,11 +91,8 @@
     <Compile Include="LED.03_KQCau.Designer.cs">
       <DependentUpon>LED.03_KQCau.cs</DependentUpon>
     </Compile>
-    <Compile Include="LED.04_KQTong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LED.04_KQTong.Designer.cs">
-      <DependentUpon>LED.04_KQTong.cs</DependentUpon>
+    <Compile Include="next_question_led.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LED.03_KQCau.resx">
       <DependentUpon>LED.03_KQCau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LED.04_KQTong.resx">
-      <DependentUpon>LED.04_KQTong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

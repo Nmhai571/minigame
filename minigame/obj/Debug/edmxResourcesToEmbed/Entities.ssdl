@@ -10,6 +10,13 @@
     <Property Name="time_of_answer" Type="int" />
     <Property Name="answers" Type="nvarchar" MaxLength="30" />
   </EntityType>
+  <EntityType Name="next_question_led">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="next_led_status" Type="int" />
+  </EntityType>
   <EntityType Name="question_topic">
     <Key>
       <PropertyRef Name="id_topic" />
@@ -170,6 +177,7 @@
   </Association>
   <EntityContainer Name="gameshowhannguModelStoreContainer">
     <EntitySet Name="answers_of_student" EntityType="Self.answers_of_student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="next_question_led" EntityType="Self.next_question_led" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="question_topic" EntityType="Self.question_topic" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />

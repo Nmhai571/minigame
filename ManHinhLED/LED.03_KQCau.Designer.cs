@@ -446,11 +446,12 @@
             // 
             // timerKQCau
             // 
-            this.timerKQCau.Interval = 5000;
+            this.timerKQCau.Interval = 3000;
             this.timerKQCau.Tick += new System.EventHandler(this.timerKQCau_Tick);
             // 
             // timerShowAnswer
             // 
+            this.timerShowAnswer.Interval = 500;
             this.timerShowAnswer.Tick += new System.EventHandler(this.timerShowAnswer_Tick);
             // 
             // LED3

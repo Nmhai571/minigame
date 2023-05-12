@@ -27,6 +27,7 @@ namespace ManHinhAdmin
 
         private void btnBatDau1_Click(object sender, EventArgs e)
         {
+
             context = new gameshowhannguEntities();
             var status = (from s in context.statusses
                           join q in context.questions on s.id_status equals q.id_status
@@ -36,7 +37,17 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus1.Text = status.s.name_status;
+
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var recheckStatus = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName1.Text
+                          select new { s, q }).FirstOrDefault();
+            var statusQuestion = context.questions.Find(status.q.id_question);
+            btnStatus1.Text = recheckStatus.s.name_status;
             btnStatus1.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -55,7 +66,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus1.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName1.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus1.Text = statusQuestion1.s.name_status;
             btnStatus1.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -75,11 +91,20 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus2.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName2.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus2.Text = status1.s.name_status;
             btnStatus2.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
             nextQuestion.count_status_next_question = 1;
+
             context.SaveChanges();
         }
 
@@ -94,7 +119,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus2.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName2.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus2.Text = statusQuestion1.s.name_status;
             btnStatus2.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -113,7 +143,16 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus3.Text = status.s.name_status;
+
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName3.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus3.Text = status1.s.name_status;
             btnStatus3.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -132,7 +171,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus3.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName3.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus3.Text = statusQuestion1.s.name_status;
             btnStatus3.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -151,7 +195,15 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus4.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName4.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus4.Text = status1.s.name_status;
             btnStatus4.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -170,7 +222,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus4.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName4.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus4.Text = statusQuestion1.s.name_status;
             btnStatus4.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -191,7 +248,15 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus5.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName5.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus5.Text = status1.s.name_status;
             btnStatus5.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -210,7 +275,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus5.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName5.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus5.Text = statusQuestion1.s.name_status;
             btnStatus5.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -229,7 +299,15 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus6.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName6.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus6.Text = status1.s.name_status;
             btnStatus6.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -248,7 +326,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus6.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                 join q in context.questions on s.id_status equals q.id_status
+                                 where q.name_question == lbName6.Text
+                                 select new { s, q }).FirstOrDefault();
+            btnStatus6.Text = statusQuestion1.s.name_status;
             btnStatus6.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -267,7 +350,15 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus7.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName7.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus7.Text = status1.s.name_status;
             btnStatus7.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -286,7 +377,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus7.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName7.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus7.Text = statusQuestion1.s.name_status;
             btnStatus7.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -305,7 +401,14 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus8.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName8.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus8.Text = status1.s.name_status;
             btnStatus8.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -324,7 +427,11 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus8.Text = statusQuestion.s.name_status;
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName8.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus8.Text = statusQuestion1.s.name_status;
             btnStatus8.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -343,7 +450,15 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus9.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName9.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus9.Text = status1.s.name_status;
             btnStatus9.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -362,7 +477,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus9.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName9.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus9.Text = statusQuestion1.s.name_status;
             btnStatus9.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);
@@ -381,7 +501,15 @@ namespace ManHinhAdmin
             statusChange.id_status = 2;
             context.SaveChanges();
 
-            btnStatus10.Text = status.s.name_status;
+            var nextQuestionLed = context.next_question_led.Find(1);
+            nextQuestionLed.next_led_status = 1;
+
+
+            var status1 = (from s in context.statusses
+                          join q in context.questions on s.id_status equals q.id_status
+                          where q.name_question == lbName10.Text
+                          select new { s, q }).FirstOrDefault();
+            btnStatus10.Text = status1.s.name_status;
             btnStatus10.BackColor = Color.Yellow;
 
             var nextQuestion = context.status_next_question.Find(1);
@@ -400,7 +528,12 @@ namespace ManHinhAdmin
             statusChange.id_status = 3;
             context.SaveChanges();
 
-            btnStatus10.Text = statusQuestion.s.name_status;
+
+            var statusQuestion1 = (from s in context.statusses
+                                  join q in context.questions on s.id_status equals q.id_status
+                                  where q.name_question == lbName10.Text
+                                  select new { s, q }).FirstOrDefault();
+            btnStatus10.Text = statusQuestion1.s.name_status;
             btnStatus10.BackColor = Color.Green;
 
             var statusLed = context.status_led.Find(1);

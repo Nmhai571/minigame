@@ -15,6 +15,13 @@
           <Property Name="time_of_answer" Type="int" />
           <Property Name="answers" Type="nvarchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="next_question_led">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="next_led_status" Type="int" />
+        </EntityType>
         <EntityType Name="question_topic">
           <Key>
             <PropertyRef Name="id_topic" />
@@ -175,6 +182,7 @@
         </Association>
         <EntityContainer Name="gameshowhannguModelStoreContainer">
           <EntitySet Name="answers_of_student" EntityType="Self.answers_of_student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="next_question_led" EntityType="Self.next_question_led" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="question_topic" EntityType="Self.question_topic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="question_type" EntityType="Self.question_type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
@@ -424,6 +432,7 @@
           </AssociationSet>
           <EntitySet Name="status_team" EntityType="gameshowhannguModel.status_team" />
           <EntitySet Name="status_next_question" EntityType="gameshowhannguModel.status_next_question" />
+          <EntitySet Name="next_question_led" EntityType="gameshowhannguModel.next_question_led" />
         </EntityContainer>
         <EntityType Name="status_team">
           <Key>
@@ -438,6 +447,13 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="count_status_next_question" Type="Int32" />
+        </EntityType>
+        <EntityType Name="next_question_led">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="next_led_status" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -535,6 +551,14 @@
             <EntityTypeMapping TypeName="gameshowhannguModel.status_next_question">
               <MappingFragment StoreEntitySet="status_next_question">
                 <ScalarProperty Name="count_status_next_question" ColumnName="count_status_next_question" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="next_question_led">
+            <EntityTypeMapping TypeName="gameshowhannguModel.next_question_led">
+              <MappingFragment StoreEntitySet="next_question_led">
+                <ScalarProperty Name="next_led_status" ColumnName="next_led_status" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

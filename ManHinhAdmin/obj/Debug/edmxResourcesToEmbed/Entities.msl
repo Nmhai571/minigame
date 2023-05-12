@@ -95,5 +95,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="next_question_led">
+      <EntityTypeMapping TypeName="gameshowhannguModel.next_question_led">
+        <MappingFragment StoreEntitySet="next_question_led">
+          <ScalarProperty Name="next_led_status" ColumnName="next_led_status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

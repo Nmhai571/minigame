@@ -206,5 +206,10 @@ namespace minigame
             lbAnswerA.ForeColor = Color.Black;
 
         }
+
+        private void lbAnswerA_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

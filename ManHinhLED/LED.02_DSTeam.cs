@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace ManHinhLED
 {
@@ -41,34 +42,102 @@ namespace ManHinhLED
                                 join sta in context.statusses on que.id_status equals sta.id_status
                                 where que.id_status == 2
                                 select que).FirstOrDefault();
-                if(question != null)
+
+                if (question != null)
                 {
                     MemoryStream stream = new MemoryStream(question.img_question);
                     Image imgQuestion = Image.FromStream(stream);
                     led3.pbImageQuestion.Image = imgQuestion;
                     led3.lbNameQuestion.Text = question.name_question;
-                    List<string> ltsStudent = new List<string>();
-                    foreach (var item in student)
-                    {
+                    led3.Show();
+                    this.Hide();
+                    timerDSTeam.Stop();
 
-                        ltsStudent.Add(item.fullname);
-                    }
-                    for (int i = 0; ;)
-                    {
-                        led3.lbNameStudent1.Text = ltsStudent[i];
-                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
-                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
-                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
-                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
-                        led3.lbNameStudent6.Text = ltsStudent[i + 5];
-                        led3.Show();
-                        this.Hide();
-                        timerDSTeam.Stop();
-                        break;
-
-                    }
                 }
-                
+                /* if (question != null)
+                 {
+                     List<string> ltsStudent = new List<string>();
+                     foreach (var item in student)
+                     {
+
+                         ltsStudent.Add(item.fullname);
+                     }
+                     int count = ltsStudent.Count;
+
+                     for (int i = 0; ;)
+                     {
+                         if (count == 1)
+                         {
+                             led3.lbNameStudent1.Text = ltsStudent[i];
+                             led3.Show();
+                             this.Hide();
+                             break;
+
+                         }
+                         if (count == 2)
+                         {
+                             led3.lbNameStudent1.Text = ltsStudent[i];
+                             led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                             led3.Show();
+                             this.Hide();
+                             timerDSTeam.Stop();
+                             break;
+                         }
+                         if (count == 3)
+                         {
+                             led3.lbNameStudent1.Text = ltsStudent[i];
+                             led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                             led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                             led3.Show();
+                             this.Hide();
+                             timerDSTeam.Stop();
+
+                             break;
+                         }
+                         if (count == 4)
+                         {
+                             led3.lbNameStudent1.Text = ltsStudent[i];
+                             led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                             led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                             led3.lbNameStudent4.Text = ltsStudent[i + 3];
+
+                             timerDSTeam.Stop();
+
+                             break;
+
+                         }
+                         if (count == 5)
+                         {
+                             led3.lbNameStudent1.Text = ltsStudent[i];
+                             led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                             led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                             led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                             led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                             led3.Show();
+                             this.Hide();
+
+                             break;
+
+                         }
+                         if (count == 6)
+                         {
+                             led3.lbNameStudent1.Text = ltsStudent[i];
+                             led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                             led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                             led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                             led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                             led3.lbNameStudent6.Text = ltsStudent[i + 5];
+                             led3.Show();
+                             this.Hide();
+                             timerDSTeam.Stop();
+
+                             break;
+                         }
+                         break;
+
+                     }
+                 }*/
+
             }
 
             if (team.count_team == 2)
@@ -82,29 +151,92 @@ namespace ManHinhLED
                                 join sta in context.statusses on que.id_status equals sta.id_status
                                 where sta.id_status == 2
                                 select que).FirstOrDefault();
-                MemoryStream stream = new MemoryStream(question.img_question);
-                Image imgQuestion = Image.FromStream(stream);
-                led3.pbImageQuestion.Image = imgQuestion;
-                led3.lbNameQuestion.Text = question.name_question;
+
+                if (question != null)
+                {
+                    MemoryStream stream = new MemoryStream(question.img_question);
+                    Image imgQuestion = Image.FromStream(stream);
+                    led3.pbImageQuestion.Image = imgQuestion;
+                    led3.lbNameQuestion.Text = question.name_question;
+                }
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
 
                     ltsStudent.Add(item.fullname);
                 }
+                var count = ltsStudent.Count;
                 for (int i = 0; ;)
                 {
-                    led3.lbNameStudent1.Text = ltsStudent[i];
-                    led3.lbNameStudent2.Text = ltsStudent[i + 1];
-                    led3.lbNameStudent3.Text = ltsStudent[i + 2];
-                    led3.lbNameStudent4.Text = ltsStudent[i + 3];
-                    led3.lbNameStudent5.Text = ltsStudent[i + 4];
-                    led3.lbNameStudent6.Text = ltsStudent[i + 5];
-                    led3.Show();
-                    this.Hide();
-                    timerDSTeam.Stop();
-                    break;
+                    
+                    if (count == 1)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
 
+                    }
+                    if (count == 2)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+                    if (count == 3)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+                    if (count == 4)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+
+                    }
+                    if (count == 5)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+
+                    }
+                    if (count == 6)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.lbNameStudent6.Text = ltsStudent[i + 5];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+
+                    break;
                 }
             }
 
@@ -119,27 +251,93 @@ namespace ManHinhLED
                                 join sta in context.statusses on que.id_status equals sta.id_status
                                 where sta.id_status == 2
                                 select que).FirstOrDefault();
-                MemoryStream stream = new MemoryStream(question.img_question);
-                Image imgQuestion = Image.FromStream(stream);
-                led3.pbImageQuestion.Image = imgQuestion;
-                led3.lbNameQuestion.Text = question.name_question;
+                
+              
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
 
                     ltsStudent.Add(item.fullname);
                 }
+                if (question != null)
+                {
+                    MemoryStream stream = new MemoryStream(question.img_question);
+                    Image imgQuestion = Image.FromStream(stream);
+                    led3.pbImageQuestion.Image = imgQuestion;
+                    led3.lbNameQuestion.Text = question.name_question;
+                }
+                var count = ltsStudent.Count;
                 for (int i = 0; ;)
                 {
-                    led3.lbNameStudent1.Text = ltsStudent[i];
-                    led3.lbNameStudent2.Text = ltsStudent[i + 1];
-                    led3.lbNameStudent3.Text = ltsStudent[i + 2];
-                    led3.lbNameStudent4.Text = ltsStudent[i + 3];
-                    led3.lbNameStudent5.Text = ltsStudent[i + 4];
-                    led3.lbNameStudent6.Text = ltsStudent[i + 5];
-                    led3.Show();
-                    this.Hide();
-                    timerDSTeam.Stop();
+                    if (count == 1)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.Show();
+                        this.Hide();
+                        break;
+
+                    }
+                    if (count == 2)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+                    if (count == 3)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
+                    if (count == 4)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 5)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 6)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.lbNameStudent6.Text = ltsStudent[i + 5];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
                     break;
 
                 }
@@ -156,27 +354,91 @@ namespace ManHinhLED
                                 join sta in context.statusses on que.id_status equals sta.id_status
                                 where sta.id_status == 2
                                 select que).FirstOrDefault();
-                MemoryStream stream = new MemoryStream(question.img_question);
-                Image imgQuestion = Image.FromStream(stream);
-                led3.pbImageQuestion.Image = imgQuestion;
-                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
 
                     ltsStudent.Add(item.fullname);
                 }
+                if (question != null)
+                {
+                    MemoryStream stream = new MemoryStream(question.img_question);
+                    Image imgQuestion = Image.FromStream(stream);
+                    led3.pbImageQuestion.Image = imgQuestion;
+                    led3.lbNameQuestion.Text = question.name_question;
+                }
+                var count = ltsStudent.Count;
                 for (int i = 0; ;)
                 {
-                    led3.lbNameStudent1.Text = ltsStudent[i];
-                    led3.lbNameStudent2.Text = ltsStudent[i + 1];
-                    led3.lbNameStudent3.Text = ltsStudent[i + 2];
-                    led3.lbNameStudent4.Text = ltsStudent[i + 3];
-                    led3.lbNameStudent5.Text = ltsStudent[i + 4];
-                    led3.lbNameStudent6.Text = ltsStudent[i + 5];
-                    led3.Show();
-                    this.Hide();
-                    timerDSTeam.Stop();
+                    if (count == 1)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.Show();
+                        this.Hide();
+                        break;
+
+                    }
+                    if (count == 2)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+                    if (count == 3)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
+                    if (count == 4)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 5)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 6)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.lbNameStudent6.Text = ltsStudent[i + 5];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
                     break;
 
                 }
@@ -193,27 +455,91 @@ namespace ManHinhLED
                                 join sta in context.statusses on que.id_status equals sta.id_status
                                 where sta.id_status == 2
                                 select que).FirstOrDefault();
-                MemoryStream stream = new MemoryStream(question.img_question);
-                Image imgQuestion = Image.FromStream(stream);
-                led3.pbImageQuestion.Image = imgQuestion;
-                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
 
                     ltsStudent.Add(item.fullname);
                 }
+                if (question != null)
+                {
+                    MemoryStream stream = new MemoryStream(question.img_question);
+                    Image imgQuestion = Image.FromStream(stream);
+                    led3.pbImageQuestion.Image = imgQuestion;
+                    led3.lbNameQuestion.Text = question.name_question;
+                }
+                var count = ltsStudent.Count;
                 for (int i = 0; ;)
                 {
-                    led3.lbNameStudent1.Text = ltsStudent[i];
-                    led3.lbNameStudent2.Text = ltsStudent[i + 1];
-                    led3.lbNameStudent3.Text = ltsStudent[i + 2];
-                    led3.lbNameStudent4.Text = ltsStudent[i + 3];
-                    led3.lbNameStudent5.Text = ltsStudent[i + 4];
-                    led3.lbNameStudent6.Text = ltsStudent[i + 5];
-                    led3.Show();
-                    this.Hide();
-                    timerDSTeam.Stop();
+                    if (count == 1)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.Show();
+                        this.Hide();
+                        break;
+
+                    }
+                    if (count == 2)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+                    if (count == 3)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
+                    if (count == 4)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 5)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 6)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.lbNameStudent6.Text = ltsStudent[i + 5];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
                     break;
 
                 }
@@ -230,27 +556,91 @@ namespace ManHinhLED
                                 join sta in context.statusses on que.id_status equals sta.id_status
                                 where sta.id_status == 2
                                 select que).FirstOrDefault();
-                MemoryStream stream = new MemoryStream(question.img_question);
-                Image imgQuestion = Image.FromStream(stream);
-                led3.pbImageQuestion.Image = imgQuestion;
-                led3.lbNameQuestion.Text = question.name_question;
                 List<string> ltsStudent = new List<string>();
                 foreach (var item in student)
                 {
 
                     ltsStudent.Add(item.fullname);
                 }
+                if (question != null)
+                {
+                    MemoryStream stream = new MemoryStream(question.img_question);
+                    Image imgQuestion = Image.FromStream(stream);
+                    led3.pbImageQuestion.Image = imgQuestion;
+                    led3.lbNameQuestion.Text = question.name_question;
+                }
+                var count = ltsStudent.Count;
                 for (int i = 0; ;)
                 {
-                    led3.lbNameStudent1.Text = ltsStudent[i];
-                    led3.lbNameStudent2.Text = ltsStudent[i + 1];
-                    led3.lbNameStudent3.Text = ltsStudent[i + 2];
-                    led3.lbNameStudent4.Text = ltsStudent[i + 3];
-                    led3.lbNameStudent5.Text = ltsStudent[i + 4];
-                    led3.lbNameStudent6.Text = ltsStudent[i + 5];
-                    led3.Show();
-                    this.Hide();
-                    timerDSTeam.Stop();
+                    if (count == 1)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.Show();
+                        this.Hide();
+                        break;
+
+                    }
+                    if (count == 2)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+                        break;
+                    }
+                    if (count == 3)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
+                    if (count == 4)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 5)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+
+                    }
+                    if (count == 6)
+                    {
+                        led3.lbNameStudent1.Text = ltsStudent[i];
+                        led3.lbNameStudent2.Text = ltsStudent[i + 1];
+                        led3.lbNameStudent3.Text = ltsStudent[i + 2];
+                        led3.lbNameStudent4.Text = ltsStudent[i + 3];
+                        led3.lbNameStudent5.Text = ltsStudent[i + 4];
+                        led3.lbNameStudent6.Text = ltsStudent[i + 5];
+                        led3.Show();
+                        this.Hide();
+                        timerDSTeam.Stop();
+
+                        break;
+                    }
                     break;
 
                 }

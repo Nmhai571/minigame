@@ -35,5 +35,6 @@ namespace ManHinhLED
         public virtual DbSet<team_battle> team_battle { get; set; }
         public virtual DbSet<status_team> status_team { get; set; }
         public virtual DbSet<status_next_question> status_next_question { get; set; }
+        public virtual DbSet<next_question_led> next_question_led { get; set; }
     }
 }

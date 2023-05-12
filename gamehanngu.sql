@@ -22,6 +22,14 @@ create table status_led
 	primary key (id)
 );
 
+create table next_question_led
+(
+	id int IDENTITY(1,1),
+	next_led_status int,
+	primary key (id)
+);
+insert into next_question_led(next_led_status) values (0);
+
 -- bảng status chuyển câu
 create table status_next_question
 (

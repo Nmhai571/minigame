@@ -217,5 +217,12 @@ namespace ManHinhAdmin
             }
             
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ADM1 admin1 = new ADM1();
+            admin1.Show();
+            this.Hide();
+        }
     }
 }
