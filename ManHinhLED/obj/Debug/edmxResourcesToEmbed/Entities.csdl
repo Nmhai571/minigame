@@ -34,7 +34,7 @@
       <PropertyRef Name="id_question" />
     </Key>
     <Property Name="id_question" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="true_answer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="true_answer" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="point" Type="Int32" />
     <Property Name="name_question" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="img_question" Type="Binary" MaxLength="Max" FixedLength="false" />

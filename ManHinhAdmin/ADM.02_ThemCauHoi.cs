@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace ManHinhAdmin
 {
@@ -74,24 +75,63 @@ namespace ManHinhAdmin
             }
             else
             {
-                pbQuestion.Image.Save(stream, ImageFormat.Png);
-                question question = new question()
+                if (resultTypeQuestion.id == 1)
                 {
+                    pbQuestion.Image.Save(stream, ImageFormat.Png);
+                    question question = new question()
+                    {
 
-                    name_question = tbAddQuestionName.Text, // message
-                    point = 1,
-                    id_status = 1,
-                    id_topic = resultTopic.id_topic,
-                    true_answer = tbAddAnswer.Text,// message
-                    id_question_type = resultTypeQuestion.id,
-                    img_question = stream.ToArray(), // message
-                };
-                context.questions.Add(question);
-                context.SaveChanges();
-                MessageBox.Show("Add Question Successfully");
-                ADM1 admin1 = new ADM1();
-                admin1.Show();
-                this.Hide();
+                        name_question = tbAddQuestionName.Text, // message
+                        point = 1,
+                        id_status = 1,
+                        id_topic = resultTopic.id_topic,
+                        true_answer = tbAddAnswer.Text,// message
+                        id_question_type = resultTypeQuestion.id,
+                        img_question = stream.ToArray(), // message
+                    };
+                    context.questions.Add(question);
+                    context.SaveChanges();
+                    MessageBox.Show("Add Question Successfully");
+                    ADM1 admin1 = new ADM1();
+                    admin1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    pbQuestion.Image.Save(stream, ImageFormat.Png);
+                    question question = new question()
+                    {
+
+                        name_question = tbAddQuestionName.Text, // message
+                        point = 1,
+                        id_status = 1,
+                        id_topic = resultTopic.id_topic,
+                        true_answer = tbAddAnswer.Text,// message
+                        id_question_type = resultTypeQuestion.id,
+                        img_question = stream.ToArray(), // message
+                    };
+                    string pattern = @"^(?=(?:.*[A-D]-[1-4]){4})[A-D]-[1-4](?:,\s*[A-D]-[1-4]){3}$";
+                    bool isMatch = Regex.IsMatch(question.true_answer, pattern);
+                    if(isMatch == true)
+                    {
+                        context.questions.Add(question);
+                        context.SaveChanges();
+                        MessageBox.Show("Add Question Successfully");
+                        ADM1 admin1 = new ADM1();
+                        admin1.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter The Correct Answer Format");
+                    }
+                    
+                    
+
+                   
+                    
+                }
+                
             }
 
         }

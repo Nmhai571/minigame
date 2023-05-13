@@ -73,9 +73,9 @@ insert into statuss (name_status) values ('Đang Thi')
 insert into statuss (name_status) values ('Đã Thi')
 select * from statuss
 -- bảng câu hỏi
-create table questions(
+create table  questions(
 	id_question int IDENTITY(1,1),
-	true_answer nvarchar(10),
+	true_answer nvarchar(30),
 	point int,
 	name_question nvarchar(10),
 	img_question image,
@@ -87,6 +87,7 @@ create table questions(
 	FOREIGN KEY (id_status) REFERENCES statuss(id_status),
 	FOREIGN KEY (id_question_type) REFERENCES question_type(id)
 );
+select * from questions
 
 INSERT INTO questions(true_answer, point, name_question, id_status, id_topic ,id_question_type, img_question)
 values('A', 1, 'Câu 1', 1, 1, 1, (select * from openrowset(Bulk 'D:\C#\minigame\Image\FileHinhDe.png', SINGLE_BLOB)as img_question))

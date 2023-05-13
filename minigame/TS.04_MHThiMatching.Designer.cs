@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbNameCauHoi = new System.Windows.Forms.Label();
             this.lbTeamThi = new System.Windows.Forms.Label();
@@ -49,7 +48,7 @@
             this.cbAnswer3 = new System.Windows.Forms.ComboBox();
             this.cbAnswer4 = new System.Windows.Forms.ComboBox();
             this.pbAnhThi = new System.Windows.Forms.PictureBox();
-            this.timerCount = new System.Windows.Forms.Timer(this.components);
+            this.timerCountDown = new System.Windows.Forms.Timer();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -85,7 +84,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.036743F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.82622F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.19364F));
-            this.tableLayoutPanel2.Controls.Add(this.label6, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbTime, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -96,17 +95,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1007, 226);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // label6
+            // lbTime
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(607, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(243, 226);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "10";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTime.AutoSize = true;
+            this.lbTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTime.Font = new System.Drawing.Font("Times New Roman", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(607, 0);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(243, 226);
+            this.lbTime.TabIndex = 5;
+            this.lbTime.Text = "10";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -137,7 +136,6 @@
             this.lbNameCauHoi.Name = "lbNameCauHoi";
             this.lbNameCauHoi.Size = new System.Drawing.Size(449, 63);
             this.lbNameCauHoi.TabIndex = 3;
-            this.lbNameCauHoi.Text = "label4";
             this.lbNameCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbTeamThi
@@ -149,7 +147,6 @@
             this.lbTeamThi.Name = "lbTeamThi";
             this.lbTeamThi.Size = new System.Drawing.Size(449, 67);
             this.lbTeamThi.TabIndex = 2;
-            this.lbTeamThi.Text = "label3";
             this.lbTeamThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbNameThi
@@ -161,7 +158,6 @@
             this.lbNameThi.Name = "lbNameThi";
             this.lbNameThi.Size = new System.Drawing.Size(449, 64);
             this.lbNameThi.TabIndex = 0;
-            this.lbNameThi.Text = "label1";
             this.lbNameThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
@@ -232,7 +228,6 @@
             this.lbAnswerA.TabIndex = 0;
             this.lbAnswerA.Text = "A";
             this.lbAnswerA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbAnswerA.Click += new System.EventHandler(this.lbAnswerA_Click_1);
             // 
             // lbAnswerB
             // 
@@ -365,9 +360,10 @@
             this.pbAnhThi.TabIndex = 1;
             this.pbAnhThi.TabStop = false;
             // 
-            // timerCount
+            // timerCountDown
             // 
-            this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
+            this.timerCountDown.Interval = 1000;
+            this.timerCountDown.Tick += new System.EventHandler(this.timerCountDown_Tick);
             // 
             // TS4
             // 
@@ -400,12 +396,11 @@
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         public System.Windows.Forms.Label lbNameThi;
         public System.Windows.Forms.Label lbTeamThi;
         public System.Windows.Forms.Label lbNameCauHoi;
-        private System.Windows.Forms.Timer timerCount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -419,5 +414,6 @@
         public System.Windows.Forms.Label lbAnswerD;
         public System.Windows.Forms.ComboBox cbAnswer1;
         public System.Windows.Forms.PictureBox pbAnhThi;
+        private System.Windows.Forms.Timer timerCountDown;
     }
 }

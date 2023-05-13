@@ -8,7 +8,7 @@ namespace minigame
 {
     public partial class TS4 : Form
     {
-        gameshowhannguEntities context = new gameshowhannguEntities();
+        gameshowhannguEntities context;
         public TS4()
         {
             InitializeComponent();
@@ -19,197 +19,38 @@ namespace minigame
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
             //this.WindowState = FormWindowState.Maximized;
+            timerCountDown.Start();
         }
-        private bool labelSelected = false;
         int countDown = 10;
-        private void timerCount_Tick(object sender, EventArgs e)
+        private void timerCountDown_Tick(object sender, EventArgs e)
         {
-
-        }
-
-        private void lbAnswerA_Click(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
+            countDown--;
+            lbTime.Text = countDown.ToString();
+            if (countDown == 0)
             {
+                timerCountDown.Stop();
+            }
+
+            if(cbAnswer1.Text != "" && cbAnswer2.Text != "" && cbAnswer3.Text != "" && cbAnswer4.Text != "")
+            {
+                timerCountDown.Stop();
+                context = new gameshowhannguEntities();
                 var question = (from q in context.questions
                                 select q)
                                .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
                 var student = (from s in context.students
                                select s)
                                .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
                 answers_of_student answer = new answers_of_student()
                 {
                     id_student = student.id_student,
                     id_question = question.id_question,
-                    answers = string.Concat(lbAnswerA.Text, cbAnswer1.Text),
+                    answers = lbAnswerA.Text +"-"+ cbAnswer1.Text +", " + lbAnswerB.Text + "-" + cbAnswer2.Text + ", " + lbAnswerC.Text + "-" + cbAnswer3.Text + ", " + lbAnswerD.Text +"-" + cbAnswer4.Text,
                     time_of_answer = 10 - countDown
                 };
-
                 context.answers_of_student.Add(answer);
                 context.SaveChanges();
-
-                lbAnswerA.ForeColor = Color.White;
-                lbAnswerA.MouseLeave -= lbAnswerA_MouseLeave;
-                labelSelected = true;
-                timerCount.Stop();
             }
-        }
-
-        private void lbAnswerB_Click(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                var question = (from q in context.questions
-                                select q)
-                               .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
-                var student = (from s in context.students
-                               select s)
-                               .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
-                answers_of_student answer = new answers_of_student()
-                {
-                    id_student = student.id_student,
-                    id_question = question.id_question,
-                    answers = string.Concat(lbAnswerA.Text, cbAnswer1.Text),
-                    time_of_answer = 10 - countDown
-                };
-
-                context.answers_of_student.Add(answer);
-                context.SaveChanges();
-
-                lbAnswerA.ForeColor = Color.White;
-                lbAnswerA.MouseLeave -= lbAnswerA_MouseLeave;
-                labelSelected = true;
-                timerCount.Stop();
-            }
-        }
-
-        private void lbAnswerC_Click(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                var question = (from q in context.questions
-                                select q)
-                               .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
-                var student = (from s in context.students
-                               select s)
-                               .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
-                answers_of_student answer = new answers_of_student()
-                {
-                    id_student = student.id_student,
-                    id_question = question.id_question,
-                    answers = string.Concat(lbAnswerC.Text, cbAnswer3.Text),
-                    time_of_answer = 10 - countDown
-                };
-
-                context.answers_of_student.Add(answer);
-                context.SaveChanges();
-
-                lbAnswerA.ForeColor = Color.White;
-                lbAnswerA.MouseLeave -= lbAnswerA_MouseLeave;
-                labelSelected = true;
-                timerCount.Stop();
-            }
-        }
-
-        private void lbAnswerD_Click(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                var question = (from q in context.questions
-                                select q)
-                               .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
-
-                var student = (from s in context.students
-                               select s)
-                               .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
-
-                answers_of_student answer = new answers_of_student()
-                {
-                    id_student = student.id_student,
-                    id_question = question.id_question,
-                    answers = string.Concat(lbAnswerD.Text, cbAnswer4.Text),
-                    time_of_answer = 10 - countDown
-                };
-
-                context.answers_of_student.Add(answer);
-                context.SaveChanges();
-
-                lbAnswerA.ForeColor = Color.White;
-                lbAnswerA.MouseLeave -= lbAnswerA_MouseLeave;
-                labelSelected = true;
-                timerCount.Stop();
-            }
-        }
-
-        private void lbAnswerA_MouseHover(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                lbAnswerA.Cursor = Cursors.Hand;
-                lbAnswerA.ForeColor = Color.White;
-            }
-        }
-
-        private void lbAnswerA_MouseLeave(object sender, EventArgs e)
-        {
-            lbAnswerA.ForeColor = Color.Black;
-
-        }
-
-        private void lbAnswerB_MouseHover(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                lbAnswerA.Cursor = Cursors.Hand;
-                lbAnswerA.ForeColor = Color.White;
-            }
-        }
-
-        private void lbAnswerB_MouseLeave(object sender, EventArgs e)
-        {
-            lbAnswerA.ForeColor = Color.Black;
-
-        }
-
-        private void lbAnswerC_MouseHover(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                lbAnswerC.Cursor = Cursors.Hand;
-                lbAnswerC.ForeColor = Color.White;
-            }
-        }
-
-        private void lbAnswerC_MouseLeave(object sender, EventArgs e)
-        {
-            lbAnswerA.ForeColor = Color.Black;
-
-        }
-
-        private void lbAnswerD_MouseHover(object sender, EventArgs e)
-        {
-            if (labelSelected == false)
-            {
-                lbAnswerD.Cursor = Cursors.Hand;
-                lbAnswerD.ForeColor = Color.White;
-            }
-        }
-
-        private void lbAnswerD_MouseLeave(object sender, EventArgs e)
-        {
-            lbAnswerA.ForeColor = Color.Black;
-
-        }
-
-        private void lbAnswerA_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

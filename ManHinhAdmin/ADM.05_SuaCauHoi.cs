@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ManHinhAdmin
@@ -53,13 +54,38 @@ namespace ManHinhAdmin
                                       where qt.type_of_name == cbType.Text
                                       select qt).FirstOrDefault();
             var question = context.questions.Find(int.Parse(tbId.Text));
+            
             question.name_question = tbAddQuestionName.Text;
             question.true_answer = tbAnswer.Text;
             question.point = int.Parse(tbPoint.Text);
             question.id_question_type = resultTypeQuestion.id;
             question.id_topic = resultTopic.id_topic;
             question.img_question = stream.ToArray();
-            context.SaveChanges();
+            if (question.id_question_type == 1)
+            {
+                MessageBox.Show("Update Question Success");
+                context.SaveChanges();
+                ADM1 admin1 = new ADM1();
+                admin1.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                string pattern = @"^(?=(?:.*[A-D]-[1-4]){4})[A-D]-[1-4](?:,\s*[A-D]-[1-4]){3}$";
+                bool isMatch = Regex.IsMatch(question.true_answer, pattern);
+                if(isMatch == true)
+                {
+                    context.SaveChanges();
+                    ADM1 admin1 = new ADM1();
+                    admin1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter The Correct Answer Format");
+                }
+            }
 
         }
 
@@ -69,9 +95,7 @@ namespace ManHinhAdmin
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Update();
-            ADM1 admin1 = new ADM1();
-            admin1.Show();
-            this.Hide();
+            
         }
 
         private void btnChooseImage_Click(object sender, EventArgs e)
