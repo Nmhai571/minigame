@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lbTime = new System.Windows.Forms.Label();
@@ -48,7 +49,8 @@
             this.cbAnswer3 = new System.Windows.Forms.ComboBox();
             this.cbAnswer4 = new System.Windows.Forms.ComboBox();
             this.pbAnhThi = new System.Windows.Forms.PictureBox();
-            this.timerCountDown = new System.Windows.Forms.Timer();
+            this.timerCountDown = new System.Windows.Forms.Timer(this.components);
+            this.timerNextQuestion = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -365,6 +367,11 @@
             this.timerCountDown.Interval = 1000;
             this.timerCountDown.Tick += new System.EventHandler(this.timerCountDown_Tick);
             // 
+            // timerNextQuestion
+            // 
+            this.timerNextQuestion.Interval = 2000;
+            this.timerNextQuestion.Tick += new System.EventHandler(this.timerNextQuestion_Tick);
+            // 
             // TS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -415,5 +422,6 @@
         public System.Windows.Forms.ComboBox cbAnswer1;
         public System.Windows.Forms.PictureBox pbAnhThi;
         private System.Windows.Forms.Timer timerCountDown;
+        private System.Windows.Forms.Timer timerNextQuestion;
     }
 }

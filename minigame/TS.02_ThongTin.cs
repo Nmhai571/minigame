@@ -51,10 +51,10 @@ namespace minigame
                     ts3.lbNameCauHoi.Text = status.question.name_question;
                     MemoryStream stream = new MemoryStream(status.question.img_question);
                     Image imgQuestion = Image.FromStream(stream);
-                    ts3.pbAnhThi.Image = imgQuestion;   
+                    ts3.pbAnhThi.Image = imgQuestion;
+                    timer.Stop();
                     ts3.Show();
                     this.Hide();
-                    timer.Stop();
                 }
                 else
                 {
@@ -64,9 +64,9 @@ namespace minigame
                     MemoryStream stream = new MemoryStream(status.question.img_question);
                     Image imgQuestion = Image.FromStream(stream);
                     ts4.pbAnhThi.Image = imgQuestion;
+                    timer.Stop();
                     ts4.Show();
                     this.Hide();
-                    timer.Stop();
                 }
             }
 

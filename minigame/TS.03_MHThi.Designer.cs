@@ -47,8 +47,8 @@
             this.lbAnswerB = new System.Windows.Forms.Label();
             this.lbAnswerA = new System.Windows.Forms.Label();
             this.pbAnhThi = new System.Windows.Forms.PictureBox();
-            this.timerCount = new System.Windows.Forms.Timer(this.components);
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.timerCount = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -315,16 +315,15 @@
             this.pbAnhThi.TabIndex = 1;
             this.pbAnhThi.TabStop = false;
             // 
-            // timerCount
-            // 
-            this.timerCount.Enabled = true;
-            this.timerCount.Interval = 1000;
-            this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick_1);
-            // 
             // timerQuestion
             // 
             this.timerQuestion.Interval = 5000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // timerCount
+            // 
+            this.timerCount.Interval = 1000;
+            this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
             // 
             // TS3
             // 
@@ -372,8 +371,8 @@
         public System.Windows.Forms.Label lbTeamThi;
         public System.Windows.Forms.Label lbNameCauHoi;
         public System.Windows.Forms.PictureBox pbAnhThi;
-        private System.Windows.Forms.Timer timerCount;
         private System.Windows.Forms.Label lbCountDown;
         private System.Windows.Forms.Timer timerQuestion;
+        private System.Windows.Forms.Timer timerCount;
     }
 }
