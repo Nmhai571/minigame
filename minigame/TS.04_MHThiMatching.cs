@@ -24,6 +24,7 @@ namespace minigame
             timerNextQuestion.Start();
         }
         int countDown = 11;
+        private bool selected = false;
         private void timerCountDown_Tick(object sender, EventArgs e)
         {
             countDown--;
@@ -31,6 +32,30 @@ namespace minigame
             if (countDown == 0)
             {
                 timerCountDown.Stop();
+                if (selected == false)
+                {
+                    context = new gameshowhannguEntities();
+
+                    var question = (from q in context.questions
+                                    select q)
+                                   .FirstOrDefault(x => x.name_question.Equals(lbNameCauHoi.Text));
+                    var student = (from s in context.students
+                                   select s)
+                                   .FirstOrDefault(x => x.fullname.Equals(lbNameThi.Text));
+                    answers_of_student answer = new answers_of_student()
+                    {
+                        id_student = student.id_student,
+                        id_question = question.id_question,
+                        answers = null,
+                        time_of_answer = null
+                    };
+
+                    context.answers_of_student.Add(answer);
+                    context.SaveChanges();
+                    selected = true;
+                    timerCountDown.Stop();
+
+                }
             }
 
             if (cbAnswer1.Text != "" && cbAnswer2.Text != "" && cbAnswer3.Text != "" && cbAnswer4.Text != "")
@@ -57,6 +82,7 @@ namespace minigame
 
         private void timerNextQuestion_Tick(object sender, EventArgs e)
         {
+            context = new gameshowhannguEntities();
             if (timerCountDown.Enabled == false)
             {
                 var nextQuestion = context.status_next_question.Find(1);

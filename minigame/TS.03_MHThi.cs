@@ -270,7 +270,6 @@ namespace minigame
         {
             --countDown;
             lbCountDown.Text = countDown.ToString();
-            Console.WriteLine(lbCountDown.Text);
             if (countDown == 0)
             {
                 timerCount.Stop();
